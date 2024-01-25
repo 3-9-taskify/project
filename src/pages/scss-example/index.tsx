@@ -1,7 +1,8 @@
 import styles from "./scss-example.module.scss";
 import classNames from "classnames/bind";
-import DescriptionTag from "../../components/commons/tag/DescriptionTag";
-import getRandomColor from "@/components/commons/tag/getRandomColor";
+import DescriptionTag from "../../components/commons/tag/descriptionTag/DescriptionTag";
+import getRandomColor from "@/components/commons/tag/descriptionTag/getRandomColor";
+import ProgressTag from "@/components/commons/tag/progressTag/ProgressTag";
 const cx = classNames.bind(styles);
 
 const descriptionTags = [
@@ -23,6 +24,7 @@ export default function ScssExample() {
   const isSelected = true;
   return (
     <>
+      <ProgressTag>TO DO</ProgressTag>
       {descriptionTags.map(tag => (
         <DescriptionTag tagName={tag.name} tagColor={tag.color} />
       ))}
