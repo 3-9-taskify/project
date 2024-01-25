@@ -11,7 +11,7 @@ interface MixButtonProps {
 
 export const MixButton = ({ children }: MixButtonProps) => {
   return (
-    <button className={cx("btn", { isChildren: children })}>
+    <button className={cx("btn", { isChildren: children })} type="button">
       {children && <span>{children}</span>}
       <div className={cx("icon-container")}>
         <Image src="/assets/images/plus.png" fill alt="plusBtn" />
