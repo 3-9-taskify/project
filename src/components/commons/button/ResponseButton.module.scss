@@ -8,11 +8,11 @@
 
   @include text-style(1.4, 500, $text-color);
   @include flexbox;
-
-  & img {
-    @include responsive("M") {
-      width: 12px;
-      height: 12px;
+  @include responsive("M") {
+    font-size: 1.2rem;
+    & img {
+      width: 1.2rem;
+      height: 1.2rem;
     }
   }
 }

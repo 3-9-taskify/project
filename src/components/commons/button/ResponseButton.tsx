@@ -14,10 +14,8 @@ const cx = classNames.bind(styles);
 
 export default function ResponseBtn({ children, state, ph, pw, fs }: Props) {
   return (
-    <>
-      <button className={cx(`${state}`)} style={{ padding: `${ph}rem ${pw}rem`, fontSize: `${fs}rem` }}>
-        {children}
-      </button>
-    </>
+    <button className={cx(`${state}`)} style={{ padding: `${ph}rem ${pw}rem`, fontSize: `${fs}rem` }}>
+      {children}
+    </button>
   );
 }
