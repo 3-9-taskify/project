@@ -92,7 +92,7 @@
       // @include pos-center-x();
       @include pos-center-y();
       background-color: $purple;
-      z-index: $test1;
+      z-index: $modal;
     }
   }
 }
@@ -108,11 +108,11 @@
   width: 3rem;
   height: 3rem;
 
-  @include responsive('T') {
+  @include responsive("T") {
     background-color: $red;
   }
 
-  @include responsive('M') {
+  @include responsive("M") {
     background-color: $gray-500;
   }
 }
