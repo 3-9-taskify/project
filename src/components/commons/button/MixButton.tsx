@@ -14,7 +14,7 @@ export const MixButton = ({ children }: MixButtonProps) => {
     <button className={cx("btn", { isChildren: children })} type="button">
       {children && <span>{children}</span>}
       <div className={cx("icon-container")}>
-        <Image src="/assets/images/plus.png" fill alt="plusBtn" />
+        <Image src="/assets/image/plus.png" fill alt="plusBtn" />
       </div>
     </button>
   );

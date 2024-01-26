@@ -6,6 +6,11 @@ export default function Home() {
     <>
       <div style={{ padding: "10px", display: "flex", flexDirection: "column", gap: "10px" }}>
         <div>
+          <Link href="/mydashboard">
+            <Button state="reject">mydashboard</Button>
+          </Link>
+        </div>
+        <div>
           <Link href="/button-example">
             <Button state="reject">button-example</Button>
           </Link>
