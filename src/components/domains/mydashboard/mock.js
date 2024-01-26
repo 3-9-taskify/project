@@ -1,6 +1,6 @@
 export const dashboardsListData = {
   cursorId: 0,
-  totalCount: 0,
+  totalCount: 6,
   dashboards: [
     {
       id: 2558,
@@ -47,14 +47,14 @@ export const dashboardsListData = {
       userId: 603,
       createdByMe: false,
     },
-    {
-      id: 2563,
-      title: "apple is delicious",
-      color: "#21b21c",
-      createdAt: "2024-01-26T15:58:22.939Z",
-      updatedAt: "2024-01-26T15:58:22.939Z",
-      userId: 603,
-      createdByMe: true,
-    },
+    // {
+    //   id: 2563,
+    //   title: "apple is delicious",
+    //   color: "#21b21c",
+    //   createdAt: "2024-01-26T15:58:22.939Z",
+    //   updatedAt: "2024-01-26T15:58:22.939Z",
+    //   userId: 603,
+    //   createdByMe: true,
+    // },
   ],
 };

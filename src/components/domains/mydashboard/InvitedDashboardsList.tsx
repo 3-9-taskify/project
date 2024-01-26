@@ -1,5 +1,3 @@
-function InvitedDashboardList() {
+export default function InvitedDashboardList() {
   return <></>;
 }
-
-export default InvitedDashboardList;

@@ -13,7 +13,7 @@ export interface DashboardProp {
   children: ReactNode;
 }
 
-function Dashboard({ color, isHost = false, isSidebar = false, children }: DashboardProp) {
+export default function Dashboard({ color, isHost = false, isSidebar = false, children }: DashboardProp) {
   return (
     <div className={cx("dashboard")}>
       <span className={cx("dashboard-dot")} style={{ "--color": color }}></span>
@@ -24,5 +24,3 @@ function Dashboard({ color, isHost = false, isSidebar = false, children }: Dashb
     </div>
   );
 }
-
-export default Dashboard;

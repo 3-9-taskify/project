@@ -5,7 +5,7 @@ type MydashboardLayoutProps = {
   invitedDashboardList: ReactNode;
 };
 
-function MydashboardLayout({ dashboardList, invitedDashboardList }: MydashboardLayoutProps) {
+export default function MydashboardLayout({ dashboardList, invitedDashboardList }: MydashboardLayoutProps) {
   return (
     <div>
       {dashboardList}
@@ -13,5 +13,3 @@ function MydashboardLayout({ dashboardList, invitedDashboardList }: MydashboardL
     </div>
   );
 }
-
-export default MydashboardLayout;
