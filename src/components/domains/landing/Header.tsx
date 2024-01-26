@@ -16,7 +16,7 @@ export default function Header() {
       <div className={cx("bottom-content-container")}>
         <div className={cx("text-container")}>
           <div className={cx("text-h2-container")}>
-            <h2>새로운 일정 관리&nbsp;</h2>
+            <h2>새로운 일정 관리</h2>
             <h2>Taskify</h2>
             {/* Montserrat 폰트사용 개인파일사용 / 전역사용 ? */}
           </div>
