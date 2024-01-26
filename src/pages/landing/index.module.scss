@@ -1,13 +1,5 @@
 .container {
-  width: 100vw;
+  white-space: nowrap;
   background-color: $black;
   color-scheme: black;
-
-  @include responsive("T") {
-    padding: 0 4rem;
-  }
-
-  @include responsive("M") {
-    padding: 0 1.6rem;
-  }
 }
