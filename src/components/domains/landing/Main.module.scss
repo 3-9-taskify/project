@@ -1,0 +1,126 @@
+@mixin large-box-text-style() {
+  height: 100%;
+  gap: 10rem;
+
+  & p {
+    @include text-style(2.2, 500, $gray-400);
+  }
+
+  & h2 {
+    @include text-style(4.8, 700, $white);
+    font-feature-settings: "clig" off, "liga" off;
+    line-height: 6.4rem;
+  }
+}
+
+// landing global
+.container {
+  @include column-flexbox();
+  gap: 9rem;
+  padding-top: 18.4rem;
+}
+
+.large-box {
+  width: 100%;
+  height: 60rem;
+  background-color: $black-300;
+  position: relative;
+  border-radius: 8px;
+}
+
+// section1
+.landing1-text-container {
+  @include large-box-text-style();
+  @include column-flexbox(normal, start);
+  padding-top: 12.3rem;
+  padding-left: 6rem;
+}
+
+.landing1-img-container {
+  position: absolute;
+  width: 59.4rem;
+  height: 49.7rem;
+  bottom: 0;
+  right: 0;
+}
+
+// section2
+.landing2-container {
+  @include flexbox(start, end);
+  height: 100%;
+  gap: 10rem;
+  padding-left: 10.8rem;
+}
+
+.landing2-text-container {
+  @include large-box-text-style();
+  @include column-flexbox(normal, start);
+  padding-top: 12.3rem;
+}
+
+.landing2-img-container {
+  position: relative;
+  width: 43.6rem;
+  height: 50rem;
+}
+
+// section3
+.landing3-container {
+  @include column-flexbox(start, normal);
+  gap: 3.6rem;
+
+  & h2 {
+    @include text-style(2.8, 700, $white);
+  }
+}
+
+.small-box-container {
+  @include flexbox();
+  gap: 3.3rem;
+  margin-bottom: 16rem;
+}
+
+.small-box {
+  width: 37.8rem;
+  height: 38.4rem;
+}
+
+.small-box-img-container {
+  position: relative;
+  height: 26rem;
+  background-color: $black-100;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.small-box-img-item1 {
+  @include pos-center();
+  width: 30rem;
+  height: 12.3rem;
+}
+.small-box-img-item2 {
+  @include pos-center();
+  width: 30rem;
+  height: 23.1rem;
+}
+.small-box-img-item3 {
+  @include pos-center();
+  width: 30rem;
+  height: 19.5rem;
+}
+
+.small-box-text-container {
+  @include column-flexbox(center, start);
+  gap: 1.8rem;
+  height: 12.4rem;
+  background-color: $black-300;
+  border-radius: 0px 0px 8px 8px;
+  padding: 3.2rem;
+
+  & h2 {
+    @include text-style(1.8, 700, $white);
+  }
+
+  & p {
+    @include text-style(1.6, 500, $white);
+  }
+}

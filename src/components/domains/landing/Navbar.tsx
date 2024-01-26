@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 
 export default function Navbar() {
   return (
-    <div className={cx("container")}>
+    <nav className={cx("container")}>
       <div>
         <Image src={icon} width={29} height={33} alt="logo" />
         <Image src={logoText} width={88} height={22} alt="logo" />
@@ -18,6 +18,6 @@ export default function Navbar() {
         <p>로그인</p>
         <p>회원가입</p>
       </div>
-    </div>
+    </nav>
   );
 }

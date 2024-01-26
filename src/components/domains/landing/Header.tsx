@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 
 export default function Header() {
   return (
-    <section className={cx("container")}>
+    <header className={cx("container")}>
       <div className={cx("img-container")}>
         <Image src={HeaderImg} fill alt="SectionImg" />
       </div>
@@ -26,6 +26,6 @@ export default function Header() {
           로그인하기
         </ResponseBtn>
       </div>
-    </section>
+    </header>
   );
 }
