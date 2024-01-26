@@ -1,0 +1,13 @@
+.container {
+  @include flexbox(between);
+  padding: 1.6rem;
+  margin: 0 auto;
+  max-width: 1920px;
+}
+
+.right-content {
+  @include flexbox();
+  @include text-style(1.6, 400, $white);
+  gap: 3.6rem;
+  padding: 0 6.4rem;
+}
