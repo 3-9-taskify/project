@@ -108,11 +108,11 @@
   width: 3rem;
   height: 3rem;
 
-  @include responsive('T') {
+  @include responsive("T") {
     background-color: $red;
   }
 
-  @include responsive('M') {
+  @include responsive("M") {
     background-color: $gray-500;
   }
 }
