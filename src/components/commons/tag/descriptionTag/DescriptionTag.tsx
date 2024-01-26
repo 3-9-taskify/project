@@ -11,7 +11,7 @@ interface TagProps {
   };
 }
 
-const DescriptionTag = ({ tagName, tagColor }: TagProps) => {
+function DescriptionTag({ tagName, tagColor }: TagProps) {
   return (
     <p
       className={cx("tag-item")}
@@ -22,6 +22,6 @@ const DescriptionTag = ({ tagName, tagColor }: TagProps) => {
       {tagName}
     </p>
   );
-};
+}
 
 export default DescriptionTag;
