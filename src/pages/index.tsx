@@ -15,6 +15,11 @@ export default function Home() {
             <Button state="reject">scss-example</Button>
           </Link>
         </div>
+        <div>
+          <Link href="/tag-example">
+            <Button state="reject">tag-example</Button>
+          </Link>
+        </div>
       </div>
     </>
   );
