@@ -13,14 +13,14 @@ interface TagProps {
 
 function DescriptionTag({ tagName, tagStyle }: TagProps) {
   return (
-    <p
-      className={cx("tag-item")}
+    <div
+      className={cx("description-tag")}
       style={{
         backgroundColor: tagStyle.backgroundColor,
         color: tagStyle.color,
       }}>
-      {tagName}
-    </p>
+      <p className={cx("description-tag-item")}>{tagName}</p>
+    </div>
   );
 }
 
