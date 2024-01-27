@@ -1,8 +1,8 @@
 .invitation {
   width: 100%;
   border-radius: 0.8rem;
-  border: 0.1rem solid $black;
   position: relative;
+  background-color: $white;
 
   &-title {
     @include text-style(2.4, 700, $black-200);

@@ -15,7 +15,7 @@ export default function DashboardList() {
   const [currentpage, setCurrentPage] = useState(1);
   //mock 데이터를 사용했으니 실제 데이터로 변경해 주세요.
   const dashboards = dashboardListData.dashboards;
-  const isExistDashboard = dashboards === [] ? false : true;
+  const isExistDashboard = dashboards.length === 0 ? false : true;
   const totalPageCount = Math.ceil(dashboardListData.totalCount / 6);
 
   function handleBackwardPageClick() {
@@ -34,22 +34,23 @@ export default function DashboardList() {
         <div className={cx("dashboard-btn-container")}>
           <MixButton>새로운 대시보드</MixButton>
         </div>
-        {isExistDashboard &&
-          dashboards.map(({ id, title, color, createdByMe }) => (
-            <div className={cx("dashboard-btn-container")} key={id}>
-              <DashboardButton id={id} color={color} isHost={createdByMe}>
-                {title}
-              </DashboardButton>
-            </div>
-          ))}
+        {dashboards.map(({ id, title, color, createdByMe }) => (
+          <div className={cx("dashboard-btn-container")} key={id}>
+            <DashboardButton id={id} color={color} isHost={createdByMe}>
+              {title}
+            </DashboardButton>
+          </div>
+        ))}
       </div>
-      <div className={cx("page-change")}>
-        <span className={cx("page-change-text")}>{`${totalPageCount} 페이지 중${currentpage}`}</span>
-        <span className={cx("page-change-btn")}>
-          <PageChangeButton isForward={false} onClick={handleBackwardPageClick} />
-          <PageChangeButton onClick={handleForwardPageClick} />
-        </span>
-      </div>
+      {isExistDashboard && (
+        <div className={cx("page-change")}>
+          <span className={cx("page-change-text")}>{`${totalPageCount} 페이지 중${currentpage}`}</span>
+          <span className={cx("page-change-btn")}>
+            <PageChangeButton isForward={false} onClick={handleBackwardPageClick} />
+            <PageChangeButton onClick={handleForwardPageClick} />
+          </span>
+        </div>
+      )}
     </article>
   );
 }
