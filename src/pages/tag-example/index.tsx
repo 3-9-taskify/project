@@ -1,7 +1,7 @@
-import DescriptionTag from "@/components/commons/tag/descriptionTag/DescriptionTag";
-import getRandomColor from "@/components/commons/tag/descriptionTag/getRandomColor";
-import ProgressTag from "@/components/commons/tag/progressTag/ProgressTag";
+import DescriptionTag from "@/components/commons/tag/DescriptionTag/DescriptionTag";
 import styles from "@/components/commons/tag/descriptionTag/DescriptionTag.module.scss";
+import getRandomColor from "@/components/commons/tag/DescriptionTag/getRandomColor";
+import ProgressTag from "@/components/commons/tag/ProgressTag/ProgressTag";
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);

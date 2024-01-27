@@ -2,20 +2,19 @@
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
+}
 
-  .description-tag {
-    display: flex;
-    padding: 0.4rem 0.6rem;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+.description-tag {
+  display: flex;
+  padding: 0.4rem 0.6rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  &-item {
+    font-size: 1.2rem;
 
-    &-item {
-      font-size: 1.2rem;
-
-      @include responsive("M") {
-        font-size: 1rem;
-      }
+    @include responsive("M") {
+      font-size: 1rem;
     }
   }
 }

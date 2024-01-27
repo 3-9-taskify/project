@@ -1,34 +1,65 @@
 .sidebar {
   width: 30rem;
-  height: 1550px;
-  border-right: 1px solid #d9d9d9;
+  height: 155rem;
+  border-right: 0.1rem solid #d9d9d9;
 
   @include responsive("T") {
-    width: 168px;
+    width: 16.8rem;
   }
 
   @include responsive("M") {
-    width: 67px;
+    width: 6.7rem;
   }
 
   .logo {
-    position: relative;
-    width: 108px;
-    height: 33px;
-    margin: 20px 0 0 24px;
+    @include flexbox(start, center);
+    margin-top: 2rem;
+    margin-left: 2rem;
+
+    @include responsive("T") {
+      @include flexbox(start, center);
+      margin-left: 2.6rem;
+    }
+
+    @include responsive("M") {
+      margin-left: 2.2rem;
+    }
+
+    &-symbol {
+      position: relative;
+      width: 2.8815rem;
+      height: 3.3069rem;
+
+      @include responsive("M") {
+        width: 2.3629rem;
+        height: 2.7133rem;
+      }
+    }
+
+    &-typo {
+      position: relative;
+      width: 8rem;
+      height: 2.2rem;
+
+      @include responsive("M") {
+        display: none;
+      }
+    }
   }
 
   .dash-boards {
-    margin-top: 40px;
+    margin-top: 4rem;
+
+    @include responsive("M") {
+      margin-top: 3.89rem;
+    }
 
     .header {
       @include flexbox(between, center);
-      margin: 0 24px;
+      margin: 0 2.4rem;
 
       .title {
-        color: #787486;
-        font-size: 12px;
-        font-weight: 700;
+        @include text-style(1.2, 700, $gray-500);
 
         @include responsive("M") {
           display: none;
@@ -36,29 +67,32 @@
       }
       .create-btn {
         position: relative;
-        width: 20px;
-        height: 20px;
+        width: 2rem;
+        height: 2rem;
       }
     }
 
     .contents {
-      margin: 18px 12px 0 12px;
+      margin: 1.8rem 1.2rem 0 1.2rem;
 
       .board-list {
-        padding: 12px;
+        @include flexbox;
+        padding: 1.2rem;
         width: 100%;
-        height: 45px;
-        border-radius: 4px;
-        background: #f1effd;
+        border-radius: 0.4rem;
         cursor: pointer;
 
+        &.selected {
+          background-color: #f1effd;
+        }
+
         @include responsive("T") {
-          width: 134px;
+          width: 13.4rem;
         }
 
         @include responsive("M") {
-          width: 40px;
-          height: 40px;
+          width: 4rem;
+          height: 4rem;
         }
       }
     }
