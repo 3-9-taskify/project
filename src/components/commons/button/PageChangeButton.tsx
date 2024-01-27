@@ -14,7 +14,7 @@ export default function PageChangeButton({ onClick, isForward = true }: PageChan
   return (
     <button className={cx("page-change-btn", { forward: isForward })} onClick={onClick}>
       <Image
-        src={isForward ? "/assets/icon/ic-arrow-page-forward.svg" : "/assets/icon/ic-arrow-page-backward.svg"}
+        src={isForward ? "/assets/icons/ic-arrow-page-forward.svg" : "/assets/icons/ic-arrow-page-backward.svg"}
         alt="페이지 넘김 방향 표시 아이콘"
         width={16}
         height={16}

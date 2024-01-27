@@ -1,4 +1,4 @@
-export const dashboardsListData = {
+export const dashboardListData = {
   cursorId: 0,
   totalCount: 6,
   dashboards: [

@@ -22,7 +22,7 @@ export default function ColorList() {
     <ul className={cx("color-list")}>
       {colors.map((color) => (
         <li onClick={() => handleSelectColor(color)} id={color} className={cx("color-btn", color)}>
-          {selectedColor === color && <Image src="/assets/icon/ic-check.svg.svg" fill alt="선택" />}
+          {selectedColor === color && <Image src="/assets/icons/ic-check.svg.svg" fill alt="선택" />}
         </li>
       ))}
     </ul>

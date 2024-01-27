@@ -1,0 +1,23 @@
+.invitation {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+
+  @include responsive("M") {
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  &-title {
+    @include text-style(1.6, 400, $black-200);
+    padding-left: 3.6rem;
+  }
+
+  &-inviter {
+    @include text-style(1.6, 400, $black-200);
+  }
+
+  &-btn {
+    @include flexbox(start, center);
+    gap: 1rem;
+  }
+}

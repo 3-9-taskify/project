@@ -1,31 +1,31 @@
 import { useState } from "react";
 
-import styles from "./DashboardsList.module.scss";
+import styles from "./DashboardList.module.scss";
 import classNames from "classnames/bind";
 
 import { MixButton } from "@/components/commons/button/MixButton";
-import DashboardButton from "./DashboardButton";
-import PageChangeButton from "./PageChangeButton";
+import DashboardButton from "./ui/DashboardButton";
+import PageChangeButton from "../../commons/button/PageChangeButton";
 
-import { dashboardsListData } from "./mock";
+import { dashboardListData } from "./mock/dashboard-list";
 
 const cx = classNames.bind(styles);
 
 export default function DashboardList() {
-  const [page, setPage] = useState(1);
+  const [currentpage, setCurrentPage] = useState(1);
   //mock 데이터를 사용했으니 실제 데이터로 변경해 주세요.
-  const dashboards = dashboardsListData.dashboards;
+  const dashboards = dashboardListData.dashboards;
   const isExistDashboard = dashboards === [] ? false : true;
-  const totalPageCount = Math.ceil(dashboardsListData.totalCount / 6);
+  const totalPageCount = Math.ceil(dashboardListData.totalCount / 6);
 
   function handleBackwardPageClick() {
     //이전 페이지의 dashboard를 보여줄 수 있게 서버에 요청을 보내주세요
-    // '~페이지 중 ~' 부분의 숫자를 하나 줄여주세요.
+    // setCurrentPage를 이용해서 '~페이지 중 ~' 부분의 숫자를 하나 줄여주세요.
   }
 
   function handleForwardPageClick() {
     //이후 페이지의 dashboard를 보여줄 수 있게 서버에 요청을 보내주세요
-    // '~페이지 중 ~' 부분의 숫자를 하나 늘여주세요.
+    // setCurrentPage를 이용해서 '~페이지 중 ~' 부분의 숫자를 하나 줄여주세요.
   }
 
   return (
@@ -44,7 +44,7 @@ export default function DashboardList() {
           ))}
       </div>
       <div className={cx("page-change")}>
-        <span className={cx("page-change-text")}>{`${totalPageCount} 페이지 중${page}`}</span>
+        <span className={cx("page-change-text")}>{`${totalPageCount} 페이지 중${currentpage}`}</span>
         <span className={cx("page-change-btn")}>
           <PageChangeButton isForward={false} onClick={handleBackwardPageClick} />
           <PageChangeButton onClick={handleForwardPageClick} />
