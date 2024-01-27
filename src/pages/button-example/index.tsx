@@ -12,7 +12,9 @@ export default function Index() {
           <Image src="/assets/images/plus.png" height={16} width={16} alt="sd" />
           수락
         </ResponseBtn>
-        <ResponseBtn state="reject">취소</ResponseBtn>
+        <ResponseBtn ph={0} state="reject">
+          취소
+        </ResponseBtn>
         <ResponseBtn state="cancel">거절</ResponseBtn>
         <ResponseBtn state="delete">삭제</ResponseBtn>
       </div>

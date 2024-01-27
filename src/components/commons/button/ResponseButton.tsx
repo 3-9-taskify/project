@@ -12,9 +12,10 @@ interface Props {
 
 const cx = classNames.bind(styles);
 
-export default function ResponseBtn({ children, state, ph, pw, fs }: Props) {
+// 예정 ) pw 제거 , width 100% (외부컴포넌트로 조정)
+export default function ResponseBtn({ children, state, ph, fs }: Props) {
   return (
-    <button className={cx(`${state}`)} type="button" style={{ padding: `${ph}rem ${pw}rem`, fontSize: `${fs}rem` }}>
+    <button className={cx(`${state}`)} type="button" style={{ padding: `${ph}rem 0`, fontSize: `${fs}rem` }}>
       {children}
     </button>
   );

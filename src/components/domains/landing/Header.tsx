@@ -4,8 +4,9 @@ import HeaderImg from "./Header-assets/section.png";
 import ResponseBtn from "@/components/commons/button/ResponseButton";
 import styles from "./Header.module.scss";
 import classNames from "classnames/bind";
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion } from "framer-motion";
 import AnimText from "./AnimText";
+import Link from "next/link";
 
 const cx = classNames.bind(styles);
 
@@ -31,9 +32,15 @@ export default function Header() {
             />
           </div>
         </div>
-        <ResponseBtn state="accept" ph={1.5} pw={14} fs={1.8}>
-          로그인하기
-        </ResponseBtn>
+        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} transition={{ type: "spring" }}>
+          <Link href={"/login"}>
+            <div className={cx("button-container")}>
+              <ResponseBtn state="accept" ph={1.5} pw={14} fs={1.8}>
+                로그인하기
+              </ResponseBtn>
+            </div>
+          </Link>
+        </motion.div>
       </div>
     </header>
   );

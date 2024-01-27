@@ -96,6 +96,14 @@
   gap: 0.5rem;
 }
 
+.button-container {
+  width: 28rem;
+
+  @include responsive("M") {
+    width: 23.5rem;
+  }
+}
+
 // animations
 .typing-line {
   width: 3px;
