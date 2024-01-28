@@ -12,7 +12,7 @@ export default function ParentContainer({ children }: { children: ReactNode }) {
       <Sidebar />
       <div className={cx("contents")}>
         <Navbar />
-        <main>{children}</main>
+        {children}
       </div>
     </div>
   );

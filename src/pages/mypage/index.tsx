@@ -1,4 +1,5 @@
 import ParentContainer from "@/components/commons/ParentContainer/ParentContainer";
+import ResponseBtn from "@/components/commons/button/ResponseButton";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./mypage.module.scss";
@@ -53,7 +54,11 @@ export default function Mypage() {
                 </div>
               </div>
             </div>
-            <button className={cx("btn")}>저장</button>
+            <div className={cx("contents-btn")}>
+              <ResponseBtn state="accept" ph={0.8} pw={3}>
+                저장
+              </ResponseBtn>
+            </div>
           </div>
           <div className={cx("mypage-container-change-password")}>
             <div className={cx("title")}>비밀번호 변경</div>
@@ -91,7 +96,11 @@ export default function Mypage() {
                 </div>
               </div>
             </div>
-            <button className={cx("btn")}>변경</button>
+            <div className={cx("contents-btn")}>
+              <ResponseBtn state="accept" ph={0.8} pw={3}>
+                <button className={cx("btn")}>변경</button>
+              </ResponseBtn>
+            </div>
           </div>
         </form>
       </div>
