@@ -1,6 +1,5 @@
 .sidebar {
   width: 30rem;
-  height: 155rem;
   border-right: 0.1rem solid #d9d9d9;
 
   @include responsive("T") {
