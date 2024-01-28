@@ -1,19 +1,16 @@
 .navbar {
   @include flexbox(between, center);
-  float: right;
   padding: 2.3rem 8rem 2.3rem 4rem;
-  width: calc(100% - 30rem);
+  width: 100%;
   border-bottom: 0.1rem solid #d9d9d9;
 
   @include responsive("T") {
     @include flexbox(end, center);
     padding: 1.7rem 4rem 1.7rem 0;
-    width: calc(100% - 16.8rem);
   }
 
   @include responsive("M") {
     padding: 1.5rem 1.2rem 1.5rem 0;
-    width: calc(100% - 6.7rem);
   }
 
   @media only screen and (max-width: 422px) {

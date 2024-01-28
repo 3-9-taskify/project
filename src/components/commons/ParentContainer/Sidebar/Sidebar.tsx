@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import styles from "./Sidebar.module.scss";
 import classNames from "classnames/bind";
-import Dashboard from "../Dashboard/Dashboard";
+import Dashboard from "../../Dashboard/Dashboard";
 import dashboardListData from "./dashboardListData";
 
 const cx = classNames.bind(styles);

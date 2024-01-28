@@ -1,0 +1,7 @@
+.mypage-container {
+  margin-left: 30rem;
+
+  &-go-back {
+    @include flexbox;
+  }
+}

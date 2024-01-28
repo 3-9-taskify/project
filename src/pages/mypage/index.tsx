@@ -1,5 +1,4 @@
-import Sidebar from "@/components/commons/Sidebar/Sidebar";
-import Navbar from "@/components/commons/Navbar/Navbar";
+import ParentContainer from "@/components/commons/ParentContainer/ParentContainer";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./mypage.module.scss";
@@ -16,13 +15,11 @@ export default function Mypage() {
     console.log(data); // error 면 submit 안됨 ,SubmitHandler<FieldValues> handleSubmit 안에 들어가는 type 입니다
   };
   return (
-    <>
-      <Navbar />
-      <Sidebar />
+    <ParentContainer>
       <div className={cx("mypage-container")}>
         <div className={cx("mypage-container-go-back")}>
           <Image width={20} height={20} src="/assets/icons/ic-arrow-backward.svg" alt="뒤로가기" />
-          <span>뒤로가기</span>
+          <span>돌아가기</span>
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={cx("mypage-container-profile")}>
@@ -98,6 +95,6 @@ export default function Mypage() {
           </div>
         </form>
       </div>
-    </>
+    </ParentContainer>
   );
 }
