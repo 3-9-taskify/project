@@ -2,6 +2,7 @@
   @include column-flexbox(start, start);
   gap: 0.8rem;
   position: relative;
+  width: 100%;
 
   .eye {
     position: absolute;
