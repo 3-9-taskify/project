@@ -49,6 +49,7 @@
     display: inline-block;
     width: 2rem;
     height: 1.6rem;
+    flex: inherit;
     position: relative;
 
     &.sidebar {

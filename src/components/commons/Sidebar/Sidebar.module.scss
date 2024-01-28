@@ -1,4 +1,5 @@
 .sidebar {
+  float: left;
   width: 30rem;
   height: 155rem;
   border-right: 0.1rem solid #d9d9d9;
@@ -13,17 +14,8 @@
 
   .logo {
     @include flexbox(start, center);
-    margin-top: 2rem;
-    margin-left: 2rem;
-
-    @include responsive("T") {
-      @include flexbox(start, center);
-      margin-left: 2.6rem;
-    }
-
-    @include responsive("M") {
-      margin-left: 2.2rem;
-    }
+    padding-top: 2rem;
+    padding-left: 2rem;
 
     &-symbol {
       position: relative;
@@ -44,6 +36,15 @@
       @include responsive("M") {
         display: none;
       }
+    }
+
+    @include responsive("T") {
+      @include flexbox(center, center);
+      padding-left: 0;
+    }
+
+    @include responsive("M") {
+      padding-left: 0;
     }
   }
 

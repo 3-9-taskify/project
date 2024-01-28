@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Button from "@/components/commons/button/ResponseButton";
-import Sidebar from "@/components/commons/Sidebar/Sidebar";
 
 export default function Home() {
   return (
@@ -21,7 +20,6 @@ export default function Home() {
             <Button state="reject">tag-example</Button>
           </Link>
         </div>
-        <Sidebar />
       </div>
     </>
   );

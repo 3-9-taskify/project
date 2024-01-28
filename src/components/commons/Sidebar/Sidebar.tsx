@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 import styles from "./Sidebar.module.scss";
 import classNames from "classnames/bind";
 import Dashboard from "../Dashboard/Dashboard";
 import dashboardListData from "./dashboardListData";
-import { useState } from "react";
 
 const cx = classNames.bind(styles);
 const dashboardData = dashboardListData.dashboards;
@@ -21,10 +22,14 @@ export default function Sidebar() {
     <div className={cx("sidebar")}>
       <div className={cx("logo")}>
         <div className={cx("logo-symbol")}>
-          <Image fill src="/assets/images/logo-symbol.png" alt="로고 심볼" />
+          <Link href="/">
+            <Image fill src="/assets/images/logo-symbol.png" alt="로고 심볼" />
+          </Link>
         </div>
         <div className={cx("logo-typo")}>
-          <Image fill src="/assets/images/logo-typo.png" alt="로고 타이포" />
+          <Link href="/">
+            <Image fill src="/assets/images/logo-typo.png" alt="로고 타이포" />
+          </Link>
         </div>
       </div>
       <div className={cx("dash-boards")}>
