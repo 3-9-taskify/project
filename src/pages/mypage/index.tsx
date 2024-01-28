@@ -26,9 +26,12 @@ export default function Mypage() {
           <div className={cx("mypage-container-profile")}>
             <div className={cx("title")}>프로필</div>
             <div className={cx("contents")}>
-              <div className={cx("contents-upload-image")}>
-                <Image width={30} height={30} src="/assets/icons/ic-plus.svg" alt="이미지 업로드" />
-              </div>
+              <label htmlFor="fileInput">
+                <div className={cx("contents-upload-image")}>
+                  <Image width={30} height={30} src="/assets/icons/ic-plus.svg" alt="이미지 업로드" />
+                </div>
+              </label>
+              <input type="file" id="fileInput" style={{ display: "none" }} />
               <div className={cx("contents-input-area")}>
                 <div className={cx("contents-input-area-email")}>
                   <Input
