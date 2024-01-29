@@ -33,9 +33,9 @@ export default function Header() {
           </div>
         </div>
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} transition={{ type: "spring" }}>
-          <Link href={"/login"}>
+          <Link href={"/signin"}>
             <div className={cx("button-container")}>
-              <ResponseBtn state="accept" ph={1.5} pw={14} fs={1.8}>
+              <ResponseBtn state="accept" ph={1.5} fs={1.8}>
                 로그인하기
               </ResponseBtn>
             </div>
