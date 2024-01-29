@@ -18,6 +18,7 @@
   }
 
   &-title {
+    flex: 1;
     @include text-style(2, 700, $black-200);
     @include responsive("T") {
       display: none;

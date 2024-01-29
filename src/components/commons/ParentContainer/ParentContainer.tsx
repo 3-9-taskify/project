@@ -1,4 +1,4 @@
-import Navbar from "./Navbar/Navbar";
+import Navbar from "../BaseConatiner/Navbar/Navbar";
 import Sidebar from "./Sidebar/Sidebar";
 import styles from "./ParentContainer.module.scss";
 import classNames from "classnames/bind";
@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 import dynamic from "next/dynamic";
 
 const cx = classNames.bind(styles);
-const NoSSR = dynamic(() => import("./Navbar/Navbar"), { ssr: false });
+const NoSSR = dynamic(() => import("../BaseConatiner/Navbar/Navbar"), { ssr: false });
 
 export default function ParentContainer({ children }: { children: ReactNode }) {
   return (

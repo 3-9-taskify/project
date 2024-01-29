@@ -1,4 +1,4 @@
-import ParentContainer from "@/components/commons/ParentContainer/ParentContainer";
+import BaseContainer from "@/components/commons/BaseContainer/BaseContainer";
 import ResponseBtn from "@/components/commons/button/ResponseButton";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,9 +6,13 @@ import styles from "./mypage.module.scss";
 import classNames from "classnames/bind";
 import Input from "@/components/commons/Input/index";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { useRouter } from "next/router";
 const cx = classNames.bind(styles);
 
 export default function Mypage() {
+  const router = useRouter();
+  const currentPath = router.pathname;
+
   const { control, handleSubmit } = useForm({ mode: "onChange" });
   // control , handleSubmit필수, { mode: 'onChange' } - onChange 시 error 나옴,
 
@@ -16,7 +20,7 @@ export default function Mypage() {
     console.log(data); // error 면 submit 안됨 ,SubmitHandler<FieldValues> handleSubmit 안에 들어가는 type 입니다
   };
   return (
-    <ParentContainer>
+    <BaseContainer currentPath={currentPath}>
       <div className={cx("mypage-container")}>
         <div className={cx("mypage-container-go-back")}>
           <Image width={20} height={20} src="/assets/icons/ic-arrow-backward.svg" alt="뒤로가기" />
@@ -101,12 +105,12 @@ export default function Mypage() {
             </div>
             <div className={cx("contents-btn")}>
               <ResponseBtn state="accept" ph={0.8} pw={3}>
-                <button className={cx("btn")}>변경</button>
+                변경
               </ResponseBtn>
             </div>
           </div>
         </form>
       </div>
-    </ParentContainer>
+    </BaseContainer>
   );
 }
