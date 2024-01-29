@@ -66,7 +66,7 @@ export default function Mypage() {
           <div className={cx("mypage-container-change-password")}>
             <div className={cx("title")}>비밀번호 변경</div>
             <div className={cx("contents")}>
-              <div className={cx("contents-input-area")}>
+              <div className={cx("contents-input-area", "input-gap")}>
                 <div className={cx("contents-input-area-password")}>
                   <Input
                     name="currentPassword"

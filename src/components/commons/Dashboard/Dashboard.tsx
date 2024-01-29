@@ -14,7 +14,7 @@ export interface DashboardProp {
 
 function Dashboard({ color, isHost = false, isSidebar = false, children }: DashboardProp) {
   return (
-    <div className={cx("dashboard")}>
+    <div className={cx("dashboard", { sidebar: isSidebar })}>
       <span className={cx("dashboard-dot")} style={{ "--color": color }}></span>
       <span className={cx("dashboard-title", { sidebar: isSidebar })}>{children}</span>
       <span className={cx("dashboard-icon", { sidebar: isSidebar })}>

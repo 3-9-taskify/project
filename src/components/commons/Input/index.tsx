@@ -21,7 +21,7 @@ export default function Input({ placeholder, type, labelName, ...props }: InputP
     setInputType(changedType);
   };
 
-  const eyeImg = inputType === "password" ? "/assets/icon/ic-eye-close.svg" : "/assets/icon/ic-eye-open.svg";
+  const eyeImg = inputType === "password" ? "/assets/icons/ic-eye-close.svg" : "/assets/icons/ic-eye-open.svg";
 
   const isError = fieldState.invalid;
 
@@ -52,7 +52,13 @@ export default function Input({ placeholder, type, labelName, ...props }: InputP
         />
       ) : null}
       {type === "search" ? (
-        <Image src="/assets/icon/ic-magnifier.svg" className={cx("searchIcon")} width={24} height={24} alt="검색하기" />
+        <Image
+          src="/assets/icons/ic-magnifier.svg"
+          className={cx("searchIcon")}
+          width={24}
+          height={24}
+          alt="검색하기"
+        />
       ) : null}
     </div>
   );

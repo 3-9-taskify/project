@@ -78,6 +78,11 @@
       &-input-area {
         flex: 1;
 
+        &.input-gap {
+          @include column-flexbox(none, none);
+          gap: 2rem;
+        }
+
         &-email {
           margin-bottom: 2rem;
         }

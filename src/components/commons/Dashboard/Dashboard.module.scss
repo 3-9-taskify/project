@@ -3,6 +3,12 @@
   flex: 0 0 auto;
   width: 100%;
 
+  &.sidebar {
+    @include responsive("M") {
+      @include flexbox(center, center);
+    }
+  }
+
   &-dot {
     display: inline-block;
     width: 0.8rem;
