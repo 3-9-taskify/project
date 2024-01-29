@@ -17,10 +17,10 @@ const ModalContents = {
 
 interface Props {
   modalType: keyof typeof ModalContents;
-  isOpen?: () => void;
+  isModalOpen?: () => void;
 }
 
-export default function ModalLayout({ modalType = "addTask", isOpen }: Props) {
+export default function ModalLayout({ modalType = "addTask", isModalOpen }: Props) {
   const ContentComponent = ModalContents[modalType];
   return (
     <section className={cx("modal-background")}>

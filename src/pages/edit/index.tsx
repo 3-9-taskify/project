@@ -4,6 +4,7 @@ import DashboradEditTitleBox from "@/components/domains/edit/article/DashboradEd
 import DashboradEditMemberBox from "@/components/domains/edit/article/DashboradEditMemberBox";
 import Image from "next/image";
 import ResponseBtn from "@/components/commons/button/ResponseButton";
+import ModalLayout from "@/components/commons/Modals/ModalLayout";
 
 const cx = classNames.bind(styles);
 
@@ -17,9 +18,10 @@ export default function Edit() {
       <DashboradEditTitleBox>비브리지</DashboradEditTitleBox>
       <DashboradEditMemberBox isUserNameEdit={true} title="구성원"></DashboradEditMemberBox>
       <DashboradEditMemberBox isUserNameEdit={false} title="초대 내역"></DashboradEditMemberBox>
-      <ResponseBtn state="delete" ph={2} pw={9} fs={1.8}>
+      <ResponseBtn state="delete" ph={2} fs={1.8}>
         대시보드 삭제하기
       </ResponseBtn>
+      <ModalLayout modalType="editTask" />
     </main>
   );
 }

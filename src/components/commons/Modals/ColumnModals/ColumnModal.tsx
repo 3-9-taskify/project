@@ -8,10 +8,10 @@ const cx = classNames.bind(styles);
 
 interface Props {
   isEdit: boolean;
-  isOpen?: () => void;
+  isModalOpen?: () => void;
 }
 
-export default function ColumnModal({ isEdit, isOpen }: Props) {
+export default function ColumnModal({ isEdit, isModalOpen }: Props) {
   const { control, handleSubmit } = useForm({ mode: "onChange" });
 
   function handleOnSubmit(data: any) {
@@ -21,7 +21,14 @@ export default function ColumnModal({ isEdit, isOpen }: Props) {
     <>
       <h2 className={cx("title")}>{isEdit ? "칼럼 관리" : "칼럼 생성"}</h2>
       <form className={cx("form")} onSubmit={handleSubmit(handleOnSubmit)}>
-        <Input type="text" name="columnName" labelName="이름" placeholder="새로운 프로젝트" control={control} />
+        <Input
+          isModal={true}
+          type="text"
+          name="columnName"
+          labelName="이름"
+          placeholder="새로운 프로젝트"
+          control={control}
+        />
         <div className={cx("btn-line")}>
           <ResponseBtn state="cancel" ph={1.4} fs={1.6}>
             취소

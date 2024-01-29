@@ -44,7 +44,12 @@ const members = [
   },
 ];
 
-export default function DashboradEditMemberBox({ title, isUserNameEdit }: { title: string; isUserNameEdit: boolean }) {
+interface Props {
+  title: string;
+  isUserNameEdit: boolean;
+}
+
+export default function DashboradEditMemberBox({ title, isUserNameEdit }: Props) {
   function handleBackwardPageClick() {}
   return (
     <section className={cx("dashborad-edit-box", { last: !isUserNameEdit })}>

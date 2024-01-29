@@ -6,7 +6,7 @@
 }
 
 .label {
-  @include text-style(1.6);
+  @include text-style(1.8, 500, $black-200);
   cursor: pointer;
 
   .modalRequired {

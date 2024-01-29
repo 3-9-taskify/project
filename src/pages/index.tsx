@@ -15,6 +15,11 @@ export default function Home() {
             <Button state="reject">scss-example</Button>
           </Link>
         </div>
+        <div>
+          <Link href="/edit">
+            <Button state="reject">edit-dashboard</Button>
+          </Link>
+        </div>
       </div>
     </>
   );

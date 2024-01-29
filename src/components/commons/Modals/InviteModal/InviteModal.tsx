@@ -21,6 +21,7 @@ export default function InviteModal({ isOpen }: Props) {
       <h2 className={cx("title")}>초대하기</h2>
       <form className={cx("form")} onSubmit={handleSubmit(handleOnSubmit)}>
         <Input
+          isModal={true}
           type="text"
           name="columnName"
           labelName="이메일"

@@ -1,4 +1,4 @@
-import Input from "@/components/commons/Input/Input";
+import Input from "@/components/commons/input/Input";
 import styles from "./DashboradEditTitleBox.module.scss";
 import classNames from "classnames/bind";
 import { ReactNode } from "react";
@@ -9,10 +9,10 @@ import ColorList from "@/components/commons/colorList";
 const cx = classNames.bind(styles);
 
 interface porps {
-  title: string;
+  children: ReactNode;
 }
 
-export default function DashboradEditTitleBox({ children }: { children: ReactNode }) {
+export default function DashboradEditTitleBox({ children }: porps) {
   const { control, handleSubmit } = useForm();
 
   function handleOnsubmit(data: FieldValues): void {
