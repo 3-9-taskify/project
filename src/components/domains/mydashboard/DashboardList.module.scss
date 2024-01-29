@@ -12,18 +12,6 @@
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 0.8rem;
   }
-
-  // &-btn-container {
-  //   width: 33.2rem;
-
-  //   @include responsive("T") {
-  //     width: 24.7rem;
-  //   }
-
-  //   @include responsive("M") {
-  //     width: 26rem;
-  //   }
-  // }
 }
 
 .page-change {

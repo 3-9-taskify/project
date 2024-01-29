@@ -5,10 +5,10 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-type MydashboardLayoutProps = {
+interface MydashboardLayoutProps {
   dashboardList: ReactNode;
   invitedDashboardList: ReactNode;
-};
+}
 
 export default function MydashboardLayout({ dashboardList, invitedDashboardList }: MydashboardLayoutProps) {
   return (

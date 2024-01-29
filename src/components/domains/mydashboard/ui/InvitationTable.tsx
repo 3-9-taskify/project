@@ -1,6 +1,6 @@
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
-import styles from "./IvitationTable.module.scss";
+import styles from "./InvitationTable.module.scss";
 import classNames from "classnames/bind";
 
 import Input from "@/components/commons/Input";
@@ -59,8 +59,8 @@ export default function IvitationTable({ invitations }: IvitationTableProps) {
           <span>수락 여부</span>
         </div>
         {invitations.map(({ id, dashboard: { title }, inviter: { nickname } }) => (
-          <div className={cx("invitation-table-content")}>
-            <div className={cx("invitation-table-content-word")} key={id}>
+          <div className={cx("invitation-table-content")} key={id}>
+            <div className={cx("invitation-table-content-word")}>
               <Invitation title={title} inviter={nickname} />
             </div>
             <hr className={cx("invitation-table-content-break")} />
