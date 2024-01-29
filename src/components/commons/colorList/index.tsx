@@ -13,6 +13,7 @@ export default function ColorList({ setColor }: any) {
   function handleSelectColor(color: string) {
     if (selectedColor === color) {
       setSelectedColor("");
+      setColor("");
     } else {
       setSelectedColor(color);
       setColor(color);
@@ -22,7 +23,7 @@ export default function ColorList({ setColor }: any) {
   return (
     <ul className={cx("color-list")}>
       {colors.map((color) => (
-        <li onClick={() => handleSelectColor(color)} id={color} className={cx("color-btn", color)}>
+        <li onClick={() => handleSelectColor(color)} id={color} className={cx("color-btn", color)} key={color}>
           {selectedColor === color && <Image src="/assets/icons/ic-check.svg" fill alt="선택" />}
         </li>
       ))}
