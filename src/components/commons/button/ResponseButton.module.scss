@@ -23,6 +23,11 @@
   &:hover {
     background-color: #342e9a;
   }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }
 
 .reject {

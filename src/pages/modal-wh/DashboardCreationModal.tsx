@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ModalBackground from "./ModalBackground";
 import classNames from "classnames/bind";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
@@ -10,18 +10,18 @@ import Input from "@/components/commons/Input";
 const cx = classNames.bind(styles);
 
 export default function DashboardCreationModal() {
-  const { control, handleSubmit } = useForm({ mode: "onChange" });
-  // control , handleSubmit필수, { mode: 'onChange' } - onChange 시 error 나옴,
+  const [color, setColor] = useState("");
+
+  const { control, handleSubmit } = useForm({ mode: "onBlur" });
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log(data); // error 면 submit 안됨 ,SubmitHandler<FieldValues> handleSubmit 안에 들어가는 type 입니다
+    console.log(data); // return 값으로 넘겨주기 (01/29 수정할것)
   };
 
   return (
     <ModalBackground>
       <div className={cx("container")}>
         <h2>새로운 대시보드</h2>
-
         <form className={cx("form-container")} onSubmit={handleSubmit(onSubmit)}>
           <div className={cx("error-handle-container")}>
             <Input
@@ -35,10 +35,10 @@ export default function DashboardCreationModal() {
               }}
             />
           </div>
-          <ColorList />
+          <ColorList setColor={setColor} />
           <div className={cx("button-container")}>
             <div className={cx("button-item-container")}>
-              <ResponseBtn state="accept" ph={1.4} type="submit">
+              <ResponseBtn state="accept" ph={1.4} type="submit" disabled={Boolean(!color)}>
                 생성
               </ResponseBtn>
             </div>
