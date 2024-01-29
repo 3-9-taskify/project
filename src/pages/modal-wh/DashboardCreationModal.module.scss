@@ -1,8 +1,6 @@
 .container {
   width: 100%;
-  height: 100%;
   max-width: 54rem;
-  max-height: 33rem;
   min-width: 32rem;
   padding: 3.2rem 2.8rem 2.8rem;
   border-radius: 8px;
@@ -26,13 +24,6 @@
 
   @include responsive("M") {
     gap: 2.4rem;
-  }
-}
-
-.error-handle-container {
-  & > div > p {
-    position: absolute;
-    bottom: -2rem;
   }
 }
 

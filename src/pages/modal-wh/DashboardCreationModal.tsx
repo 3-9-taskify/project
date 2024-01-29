@@ -23,18 +23,17 @@ export default function DashboardCreationModal() {
       <div className={cx("container")}>
         <h2>새로운 대시보드</h2>
         <form className={cx("form-container")} onSubmit={handleSubmit(onSubmit)}>
-          <div className={cx("error-handle-container")}>
-            <Input
-              control={control}
-              labelName="대시보드 이름"
-              name="dashboardTitle"
-              placeholder="텍스트를 입력해주세요"
-              type="text"
-              rules={{
-                required: "텍스트를 입력해주세요",
-              }}
-            />
-          </div>
+          <Input
+            control={control}
+            labelName="대시보드 이름"
+            name="dashboardTitle"
+            placeholder="텍스트를 입력해주세요"
+            type="text"
+            rules={{
+              required: "텍스트를 입력해주세요",
+            }}
+          />
+
           <ColorList setColor={setColor} />
           <div className={cx("button-container")}>
             <div className={cx("button-item-container")}>
