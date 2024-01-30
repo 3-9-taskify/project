@@ -16,6 +16,11 @@ export default function Home() {
           </Link>
         </div>
         <div>
+          <Link href="/edit">
+            <Button state="reject">edit-dashboard</Button>
+          </Link>
+        </div>
+        <div>
           <Link href="/signin">
             <Button state="reject">signIn</Button>
           </Link>

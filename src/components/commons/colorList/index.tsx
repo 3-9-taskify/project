@@ -30,3 +30,4 @@ export default function ColorList({ setColor }: any) {
     </ul>
   );
 }
+
