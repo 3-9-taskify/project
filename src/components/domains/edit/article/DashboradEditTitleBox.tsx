@@ -4,7 +4,7 @@ import classNames from "classnames/bind";
 import { ReactNode } from "react";
 import ResponseBtn from "@/components/commons/button/ResponseButton";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import ColorList from "@/components/commons/colorList";
+import ColorList from "@/components/commons/ColorList/ColorList";
 
 const cx = classNames.bind(styles);
 
