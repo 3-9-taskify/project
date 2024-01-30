@@ -22,8 +22,8 @@ export default function Navbar() {
         </Link>
       </div>
       <div className={cx("right-content")}>
-        <Link href={"/login"}>로그인</Link>
-        <Link href={"signup"}>회원가입</Link>
+        <Link href={"/signin"}>로그인</Link>
+        <Link href={"/signup"}>회원가입</Link>
       </div>
     </nav>
   );

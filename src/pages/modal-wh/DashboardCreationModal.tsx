@@ -5,7 +5,7 @@ import { FieldValues, SubmitHandler, useForm, useWatch } from "react-hook-form";
 import styles from "./DashboardCreationModal.module.scss";
 import ColorList from "@/components/commons/colorList";
 import ResponseBtn from "@/components/commons/button/ResponseButton";
-import Input from "@/components/commons/Input";
+import Input from "@/components/commons/Input/Input";
 
 const cx = classNames.bind(styles);
 

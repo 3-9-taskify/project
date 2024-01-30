@@ -16,12 +16,12 @@ export default function Home() {
           </Link>
         </div>
         <div>
-          <Link href="/signIn">
+          <Link href="/signin">
             <Button state="reject">signIn</Button>
           </Link>
         </div>
         <div>
-          <Link href="/signUp">
+          <Link href="/signup">
             <Button state="reject">signUp</Button>
           </Link>
         </div>
@@ -32,7 +32,7 @@ export default function Home() {
         </div>
         <div>
           <Link href="/modal-wh">
-            <Button state="reject">modal</Button>
+            <Button state="reject">modal-wh</Button>
           </Link>
         </div>
       </div>
