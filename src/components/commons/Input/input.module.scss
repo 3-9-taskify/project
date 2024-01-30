@@ -1,7 +1,6 @@
 .input-area {
   @include column-flexbox(start, start);
   gap: 0.8rem;
-  width: 100%;
   position: relative;
 
   .eye {

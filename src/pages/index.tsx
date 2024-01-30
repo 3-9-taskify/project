@@ -16,6 +16,16 @@ export default function Home() {
           </Link>
         </div>
         <div>
+          <Link href="/signIn">
+            <Button state="reject">signIn</Button>
+          </Link>
+        </div>
+        <div>
+          <Link href="/signUp">
+            <Button state="reject">signUp</Button>
+          </Link>
+        </div>
+        <div>
           <Link href="/landing">
             <Button state="reject">landing</Button>
           </Link>
