@@ -62,8 +62,8 @@ export default function DashboradEditMemberBox({ title, isUserNameEdit }: Props)
 
           {!isUserNameEdit && (
             <div className={cx("invite-btn")}>
-              <ResponseBtn state="accept" ph={0.7} pw={1.6} fs={1.2}>
-                <Image src="/assets/icons/ic-plus-box.svg" height={16} width={16} alt="sd" />
+              <ResponseBtn state="accept" ph={0.7} fs={1.2}>
+                <Image src="/assets/icons/ic-plus-box.svg" height={16} alt="sd" />
                 초대 하기
               </ResponseBtn>
             </div>
@@ -73,7 +73,7 @@ export default function DashboradEditMemberBox({ title, isUserNameEdit }: Props)
       <h3 className={cx("little-title")}>{isUserNameEdit ? "이름" : "이메일"}</h3>
 
       <ul className={cx("list")}>
-        {members.map(member => (
+        {members.map((member) => (
           <li className={cx("list-item")} key={member.id}>
             {isUserNameEdit ? (
               <div className={cx("member-name")}>

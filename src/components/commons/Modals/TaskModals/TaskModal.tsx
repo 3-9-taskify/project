@@ -4,7 +4,7 @@ import classNames from "classnames/bind";
 import ResponseBtn from "../../Button/ResponseButton";
 import Input from "../../Input/Input";
 import Textarea from "../../Input/Textarea";
-import Dropdown from "../../dropdown/Dropdown";
+import Dropdown from "../../Dropdown/Dropdown";
 import { ChangeEvent } from "react";
 
 const cx = classNames.bind(styles);

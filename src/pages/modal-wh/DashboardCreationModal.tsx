@@ -13,7 +13,7 @@ export default function DashboardCreationModal() {
   const [color, setColor] = useState<string>("");
   const { control, handleSubmit } = useForm({ mode: "onBlur" });
 
-  const onSubmit: SubmitHandler<FieldValues> = data => {
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
     console.log(data);
   };
 
