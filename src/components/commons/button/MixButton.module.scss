@@ -6,6 +6,7 @@
   border-radius: 0.8rem;
   border: 0.1rem solid $gray-300;
   gap: 1.2rem;
+  background-color: $white;
 
   &.isChildren {
     padding: 2.55rem;
@@ -20,4 +21,7 @@
   position: relative;
   width: 2.2rem;
   height: 2.2rem;
+
+  border-radius: 0.4rem;
+  background: #f1effd;
 }
