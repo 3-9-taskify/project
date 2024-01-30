@@ -5,23 +5,24 @@ const cx = classNames.bind(styles);
 
 interface TagProps {
   tagName: string;
-  tagColor: {
+  tagStyle: {
     backgroundColor: string;
     color: string;
   };
 }
 
-const DescriptionTag = ({ tagName, tagColor }: TagProps) => {
+function DescriptionTag({ tagName, tagStyle }: TagProps) {
   return (
-    <p
-      className={cx("tag-item")}
+    <div
+      className={cx("description-tag")}
       style={{
-        backgroundColor: tagColor.backgroundColor,
-        color: tagColor.color,
-      }}>
-      {tagName}
-    </p>
+        backgroundColor: tagStyle.backgroundColor,
+        color: tagStyle.color,
+      }}
+    >
+      <p className={cx("description-tag-item")}>{tagName}</p>
+    </div>
   );
-};
+}
 
 export default DescriptionTag;

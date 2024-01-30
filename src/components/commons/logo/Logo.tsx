@@ -14,8 +14,8 @@ export default function Logo({ message }: LogoProp) {
     <div className={cx("container")}>
       <Link href="/">
         <div className={cx("logo")}>
-          <Image src="/assets/images/logo-symbol.svg" alt="logo-symbol" width={165} height={190} priority={true} />
-          <Image src="/assets/images/logo-typo.svg" alt="logo-typo" width={200} height={56} priority={true} />
+          <Image src="/assets/icons/ic-logo-symbol.svg" alt="logo-symbol" width={165} height={190} priority={true} />
+          <Image src="/assets/icons/ic-logo-typo.svg" alt="logo-typo" width={200} height={56} priority={true} />
         </div>
       </Link>
       <p className={cx("welcome-message")}>{message}</p>
