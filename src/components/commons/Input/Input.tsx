@@ -14,6 +14,7 @@ interface InputProps extends UseControllerProps {
 }
 
 export default function Input({ placeholder, type, labelName, isModal = false, ...props }: InputProps) {
+
   const { field, fieldState } = useController(props);
   const [inputType, setInputType] = useState(type);
 
@@ -22,7 +23,7 @@ export default function Input({ placeholder, type, labelName, isModal = false, .
     setInputType(changedType);
   };
 
-  const eyeImg = inputType === "password" ? "/assets/icon/ic-eye-close.svg" : "/assets/icon/ic-eye-open.svg";
+  const eyeImg = inputType === "password" ? "/assets/icons/ic-eye-close.svg" : "/assets/icons/ic-eye-open.svg";
 
   const isError = fieldState.invalid;
 
