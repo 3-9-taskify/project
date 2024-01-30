@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import Input from "../../input/Input";
+import Input from "../../Input/Input";
 import styles from "./InviteModal.module.scss";
 import classNames from "classnames/bind";
 import ResponseBtn from "../../button/ResponseButton";

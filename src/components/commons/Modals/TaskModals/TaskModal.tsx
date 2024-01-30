@@ -2,8 +2,8 @@ import { FieldValues, useForm, useWatch } from "react-hook-form";
 import styles from "./TaskModal.module.scss";
 import classNames from "classnames/bind";
 import ResponseBtn from "../../button/ResponseButton";
-import Input from "../../input/Input";
-import Textarea from "../../input/Textarea";
+import Input from "../../Input/Input";
+import Textarea from "../../Input/Textarea";
 import Dropdown from "../../dropdown/Dropdown";
 import { ChangeEvent } from "react";
 

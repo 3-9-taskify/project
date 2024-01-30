@@ -1,4 +1,4 @@
-import Input from "@/components/commons/input/Input";
+import Input from "@/components/commons/Input/Input";
 import styles from "./DashboradEditTitleBox.module.scss";
 import classNames from "classnames/bind";
 import { ReactNode } from "react";
