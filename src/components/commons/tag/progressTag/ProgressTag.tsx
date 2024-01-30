@@ -4,13 +4,13 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-const ProgressTag: React.FC<{ children?: ReactNode }> = ({ children }) => {
+function ProgressTag({ children }: { children: ReactNode }) {
   return (
     <div className={cx("progress-tag")}>
       <span className={cx("circle")}></span>
       <span className={cx("text")}>{children}</span>
     </div>
   );
-};
+}
 
 export default ProgressTag;

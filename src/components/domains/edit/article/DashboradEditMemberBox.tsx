@@ -1,7 +1,7 @@
-import ResponseBtn from "@/components/commons/button/ResponseButton";
+import ResponseBtn from "@/components/commons/Button/ResponseButton";
 import styles from "./DashboradEditMemberBox.module.scss";
 import classNames from "classnames/bind";
-import PageChangeButton from "@/components/commons/button/PageChangeButton";
+import PageChangeButton from "@/components/commons/Button/PageChangeButton";
 import Image from "next/image";
 
 const cx = classNames.bind(styles);
@@ -73,7 +73,7 @@ export default function DashboradEditMemberBox({ title, isUserNameEdit }: Props)
       <h3 className={cx("little-title")}>{isUserNameEdit ? "이름" : "이메일"}</h3>
 
       <ul className={cx("list")}>
-        {members.map((member) => (
+        {members.map(member => (
           <li className={cx("list-item")} key={member.id}>
             {isUserNameEdit ? (
               <div className={cx("member-name")}>

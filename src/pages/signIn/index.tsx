@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Logo from "@/components/commons/Logo/Logo";
 import Input from "@/components/commons/Input/Input";
-import { SignButton } from "@/components/commons/button/SignButton";
+import { SignButton } from "@/components/commons/Button/SignButton";
 
 import classNames from "classnames/bind";
 import styles from "./signIn.module.scss";
@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 export default function SignIn() {
   const { control, handleSubmit } = useForm({ mode: "onChange" });
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+  const onSubmit: SubmitHandler<FieldValues> = data => {
     // 입력된 이메일과 비밀번호로 로그인 요청(post)를 보내고
     // 유효하면 /mydashboard로 이동시키고
     // 유효하지 않으면 비밀번호가 일치하지 않는다는 모달창을 띄우도록 수정
