@@ -2,7 +2,7 @@ import MydashboardLayout from "@/components/domains/mydashboard/MydashboardLayou
 import DashboardList from "@/components/domains/mydashboard/DashboardList";
 import InvitedDashboardList from "@/components/domains/mydashboard/InvitationList";
 import BaseContainer from "@/components/commons/BaseContainer/BaseContainer";
-import { dehydrate, HydrationBoundary, QueryClient, useQuery } from "@tanstack/react-query";
+import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
 import getDashBoards from "@/api/getDashBoards";
 
 export async function getServerSideProps() {
