@@ -1,6 +1,6 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import styles from "./ModalBackground.module.scss";
 
-export default function ({ children }: { children: ReactNode }) {
-  return <div className={styles.background}>{children}</div>;
+export default function ({ onClick }: { onClick: () => void }) {
+  return <div className={styles.background} onClick={onClick}></div>;
 }

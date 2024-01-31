@@ -46,8 +46,6 @@ export default function IvitationTable({ invitations }: IvitationTableProps) {
     console.log(data);
   };
 
-  console.log(invitations);
-
   const filteredData = invitations.filter((item) => {
     return item.dashboard.title.includes(searchValue) || item.inviter.nickname.includes(searchValue);
   });

@@ -7,9 +7,16 @@ import ColorList from "@/components/commons/ColorList/ColorList";
 import ResponseBtn from "@/components/commons/Buttons/ResponseButton";
 import Input from "@/components/commons/Input/Input";
 
+import NiceModal, { useModal } from "@ebay/nice-modal-react";
+
+export default NiceModal.create(() => {
+  const modal = useModal();
+  return <DashboardCreationModal onCancel={() => modal.remove()} />;
+});
+
 const cx = classNames.bind(styles);
 
-export default function DashboardCreationModal() {
+function DashboardCreationModal({ onCancel }: { onCancel: () => void }) {
   const [color, setColor] = useState<string>("");
   const { control, handleSubmit } = useForm({ mode: "onBlur" });
 
@@ -22,11 +29,8 @@ export default function DashboardCreationModal() {
     control,
   });
 
-  // console.log("value : ", inputValue);
-  // console.log("color :", color);
-
   return (
-    <ModalBackground>
+    <>
       <div className={cx("container")}>
         <h2>새로운 대시보드</h2>
         <form className={cx("form-container")} onSubmit={handleSubmit(onSubmit)}>
@@ -50,13 +54,14 @@ export default function DashboardCreationModal() {
               </ResponseBtn>
             </div>
             <div className={cx("button-item-container")}>
-              <ResponseBtn state="cancel" ph={1.4}>
+              <ResponseBtn state="cancel" ph={1.4} onClick={onCancel}>
                 취소
               </ResponseBtn>
             </div>
           </div>
         </form>
       </div>
-    </ModalBackground>
+      <ModalBackground onClick={onCancel} />
+    </>
   );
 }
