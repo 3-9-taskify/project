@@ -6,9 +6,9 @@ import Image from "next/image";
 const cx = classNames.bind(styles);
 
 interface PageChangeButtonProps {
-  onClick: () => void;
+  onClick?: () => void;
   isForward?: boolean;
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 export default function PageChangeButton({ onClick, isForward = true, disabled }: PageChangeButtonProps) {

@@ -9,7 +9,7 @@ interface Props {
   disabled?: boolean;
   ph?: number;
   fs?: number;
-  onClick?: any;
+  onClick?: () => void;
 }
 
 const cx = classNames.bind(styles);
