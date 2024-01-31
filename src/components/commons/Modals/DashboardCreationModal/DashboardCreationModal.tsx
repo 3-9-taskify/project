@@ -21,12 +21,12 @@ interface IdashboardData {
   userId: number;
 }
 
-export default NiceModal.create(({ setDashboardDatas }: { setDashboardDatas: any }) => {
+export default NiceModal.create(({}: {}) => {
   const modal = useModal();
-  return <DashboardCreationModal onCancel={() => modal.remove()} setDashboardDatas={setDashboardDatas} />;
+  return <DashboardCreationModal onCancel={() => modal.remove()} />;
 });
 
-function DashboardCreationModal({ onCancel, setDashboardDatas }: { onCancel: () => void; setDashboardDatas: any }) {
+function DashboardCreationModal({ onCancel }: { onCancel: () => void }) {
   const [color, setColor] = useState<string>("");
   const { control, handleSubmit } = useForm({ mode: "onBlur" });
 
@@ -44,7 +44,7 @@ function DashboardCreationModal({ onCancel, setDashboardDatas }: { onCancel: () 
     const accessToken =
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Njg5LCJ0ZWFtSWQiOiIyLTkiLCJpYXQiOjE3MDY2ODU1ODcsImlzcyI6InNwLXRhc2tpZnkifQ.LpyKKnBYSkI29ifh2b3uZHhmjc07tGA7DOOnKKP4joI";
     try {
-      const res = await axios.post(
+      await axios.post(
         "https://sp-taskify-api.vercel.app/2-9/dashboards",
         {
           title,
@@ -57,8 +57,6 @@ function DashboardCreationModal({ onCancel, setDashboardDatas }: { onCancel: () 
           },
         }
       );
-      const newData = res.data;
-      setDashboardDatas((prev: IdashboardData[]) => [newData, ...prev]);
 
       onCancel();
     } catch (e) {

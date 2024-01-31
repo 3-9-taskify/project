@@ -9,7 +9,6 @@ import NiceModal from "@ebay/nice-modal-react";
 import DashboardCreationModal from "@/components/commons/Modals/DashboardCreationModal/DashboardCreationModal";
 import { useQuery } from "@tanstack/react-query";
 import getDashBoards from "@/api/getDashBoards";
-import { motion } from "framer-motion";
 
 const cx = classNames.bind(styles);
 const skCx = classNames.bind(skeletonStyles);
@@ -30,21 +29,22 @@ export default function DashboardList() {
     queryFn: () => getDashBoards(currentPage, cursorId),
   });
 
-  const [dashboardDatas, setDashboardDatas] = useState(data?.dashboards);
+  const dashboardDatas = data?.dashboards;
   const totalPage = Math.ceil(data?.totalCount / 5);
 
   const showModal = () => {
-    NiceModal.show(DashboardCreationModal, { setDashboardDatas: setDashboardDatas });
+    NiceModal.show(DashboardCreationModal);
   };
 
   useEffect(() => {
     if (data?.dashboards) {
       const lastDashboard = data?.dashboards[data.dashboards.length - 1];
 
-      setDashboardDatas(data.dashboards);
       setCursorId(lastDashboard.id);
     }
   }, [data]);
+
+  console.log(dashboardDatas);
 
   if (isLoading) {
     return (
