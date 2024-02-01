@@ -17,6 +17,7 @@ export default function ColumnList() {
   const { data: columnListData } = useQuery({
     queryKey: getColumnListQueryKey(dashboardId),
     queryFn: () => getColumnList(dashboardId),
+    staleTime: 300 * 1000,
   });
 
   const columnList = columnListData?.data ?? [];

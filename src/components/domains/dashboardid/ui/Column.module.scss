@@ -10,6 +10,7 @@
     padding: 2.2rem 2rem 2rem;
     border-right: none;
     border-bottom: 0.1rem solid $gray-200;
+    scrollbar-gutter: stable;
   }
 
   @include responsive("M") {
@@ -21,6 +22,23 @@
 
     @include responsive("M") {
       margin-bottom: 1.8rem;
+    }
+  }
+
+  &-pages {
+    overflow: scroll;
+    max-height: 100%;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include responsive("T") {
+      max-height: 21rem;
+    }
+
+    @include responsive("M") {
+      max-height: 36.2rem;
     }
   }
 

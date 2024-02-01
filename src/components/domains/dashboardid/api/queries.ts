@@ -12,9 +12,9 @@ export const getColumnList = async (dashboardId: string | string[] | undefined) 
   return response.data;
 };
 
-export const getCardList = async (columnId: number) => {
+export const getCardList = async (cursorId: null | number, columnId: number) => {
   const response = await axiosInstance.get(`cards`, {
-    params: { size: 10, columnId: columnId },
+    params: { size: 10, cursorId: cursorId, columnId: columnId },
     headers: { Authorization: `Bearer ${accessToken}` },
   });
 

@@ -1,4 +1,5 @@
-import { useQuery } from "@tanstack/react-query";
+import { useEffect, useRef } from "react";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { getCardList } from "@/components/domains/dashboardid/api/queries";
 import { getCardListQueryKey } from "@/components/domains/dashboardid/api/queryKeys";
 
@@ -17,14 +18,42 @@ interface ColumnProps {
 }
 
 export default function Column({ columnId, columnTitle }: ColumnProps) {
-  const { data: cardListData, isLoading } = useQuery({
+  const {
+    data: cardPagesInfo,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+  } = useInfiniteQuery({
     queryKey: getCardListQueryKey(columnId),
-    queryFn: () => getCardList(columnId),
-    staleTime: 60 * 1000,
+    queryFn: ({ pageParam = 1 }) => getCardList(pageParam, columnId),
+    initialPageParam: null,
+    getNextPageParam: (lastPage) => lastPage.cursorId,
   });
 
-  const cardCount = cardListData?.totalCount;
-  const cardList = cardListData?.cards;
+  const cardPages = cardPagesInfo?.pages ?? [];
+  const cardCount = cardPagesInfo?.pages[0].totalCount;
+
+  // 로딩 요소를 참조하기 위한 ref
+  const loadingRef = useRef(null);
+
+  useEffect(() => {
+    if (isFetchingNextPage || !hasNextPage) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          fetchNextPage();
+        }
+      },
+      { root: document.querySelector(".column-pages"), threshold: 0 }
+    );
+
+    const currentLoadingRef = loadingRef.current;
+    observer.observe(currentLoadingRef);
+
+    // Clean up
+    return () => observer.unobserve(currentLoadingRef);
+  }, [isFetchingNextPage, hasNextPage, fetchNextPage]);
 
   return (
     <section className={cx("column")}>
@@ -32,11 +61,14 @@ export default function Column({ columnId, columnTitle }: ColumnProps) {
         <ColumnHeader columnTitle={columnTitle} cardCount={cardCount} />
       </div>
       <MixButton />
-      {!isLoading && (
-        <div className={cx("column-cards")}>
-          <CardList cardList={cardList} />
-        </div>
-      )}
+      <div className={cx("column-pages")}>
+        {cardPages.map((cardPage) => (
+          <div className={cx("column-cards")}>
+            <CardList cardList={cardPage.cards} />
+          </div>
+        ))}
+        <div ref={loadingRef}>{isFetchingNextPage ? "Loading more..." : null}</div>
+      </div>
     </section>
   );
 }
