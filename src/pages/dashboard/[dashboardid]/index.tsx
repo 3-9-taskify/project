@@ -1,8 +1,9 @@
 import { GetServerSidePropsContext } from "next";
 import { useRouter } from "next/router";
 
-import { dehydrate, HydrationBoundary, QueryClient, useQuery, DehydratedState } from "@tanstack/react-query";
-import { getColumnList, getCardList } from "../../../components/domains/dashboardid/queries";
+import { dehydrate, HydrationBoundary, QueryClient, DehydratedState } from "@tanstack/react-query";
+import { getColumnList } from "@/components/domains/dashboardid/api/queries";
+import { getColumnListQueryKey } from "@/components/domains/dashboardid/api/queryKeys";
 
 import DashboardLayout from "@/components/domains/dashboardid/DashboardLayout";
 import ColumnList from "@/components/domains/dashboardid/ColumnList";
@@ -14,7 +15,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   const dashboardId = context.query.dashboardid;
 
   await queryClient.prefetchQuery({
-    queryKey: ["columnList"],
+    queryKey: getColumnListQueryKey(dashboardId),
     queryFn: () => getColumnList(dashboardId),
   });
 

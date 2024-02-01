@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { getCardList } from "@/components/domains/dashboardid/queries";
+import { getCardList } from "@/components/domains/dashboardid/api/queries";
+import { getCardListQueryKey } from "@/components/domains/dashboardid/api/queryKeys";
 
 import styles from "./Column.module.scss";
 import classNames from "classnames/bind";
@@ -16,12 +17,8 @@ interface ColumnProps {
 }
 
 export default function Column({ columnId, columnTitle }: ColumnProps) {
-  const {
-    data: cardListData,
-    isError,
-    isLoading,
-  } = useQuery({
-    queryKey: ["cardList", columnId],
+  const { data: cardListData, isLoading } = useQuery({
+    queryKey: getCardListQueryKey(columnId),
     queryFn: () => getCardList(columnId),
     staleTime: 60 * 1000,
   });
