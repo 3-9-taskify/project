@@ -67,7 +67,7 @@ export default function DashboardList() {
           dashboardDatas.map(({ id, title, color, createdByMe }: DashboardData) => (
             <div className={cx("dashboard-btn-container")} key={id}>
               <DashboardButton id={id} color={color} isHost={createdByMe}>
-                {title.length > 15 ? `${title.slice(0, 10)}...` : title}
+                {title}
               </DashboardButton>
             </div>
           ))}

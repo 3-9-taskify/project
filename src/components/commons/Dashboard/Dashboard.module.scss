@@ -20,6 +20,8 @@
   &-title {
     @include text-style(1.6, 600, $black-200);
     overflow: hidden;
+    white-space: nowrap;
+    max-width: 15rem;
     text-overflow: ellipsis;
     padding-left: 1.6rem;
     padding-right: 0.8rem;
@@ -33,6 +35,7 @@
     @include responsive("M") {
       @include text-style(1.4, 600, $black-200);
       padding-right: 0.4rem;
+      max-width: 20rem;
     }
 
     &.sidebar {
