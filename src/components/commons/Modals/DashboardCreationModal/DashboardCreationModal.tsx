@@ -8,18 +8,9 @@ import ResponseBtn from "@/components/commons/Buttons/ResponseButton";
 import Input from "@/components/commons/Input/Input";
 import NiceModal, { useModal } from "@ebay/nice-modal-react";
 import postDashboard from "@/api/postDashboard";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const cx = classNames.bind(styles);
-
-interface IdashboardData {
-  color: string;
-  createdAt: string;
-  createdByMe: boolean;
-  id: number;
-  title: string;
-  updatedAt: string;
-  userId: number;
-}
 
 export default NiceModal.create(({}: {}) => {
   const modal = useModal();
@@ -29,6 +20,16 @@ export default NiceModal.create(({}: {}) => {
 function DashboardCreationModal({ onCancel }: { onCancel: () => void }) {
   const [color, setColor] = useState<string>("");
   const { control, handleSubmit } = useForm({ mode: "onBlur" });
+
+  const queryClient = useQueryClient();
+
+  const creationDashboardMutation = useMutation({
+    mutationFn: (newDashboard: { title: string; color: string }) =>
+      postDashboard(newDashboard.title, newDashboard.color),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["dashboardList"] });
+    },
+  });
 
   const inputValue = useWatch({
     name: "dashBoardName",
@@ -43,11 +44,15 @@ function DashboardCreationModal({ onCancel }: { onCancel: () => void }) {
     pink: "#e876ea",
   };
 
-  const DashboardDotColor = colorList[color];
-
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    const value = data.dashBoardName;
-    postDashboard(value, DashboardDotColor, onCancel);
+    const DashboardDotColor = colorList[color];
+    const newDashboard = {
+      title: data.dashBoardName,
+      color: DashboardDotColor,
+    };
+
+    creationDashboardMutation.mutate({ title: newDashboard.title, color: newDashboard.color });
+    onCancel();
   };
 
   return (
