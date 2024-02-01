@@ -7,7 +7,7 @@ import ColorList from "@/components/commons/ColorList/ColorList";
 import ResponseBtn from "@/components/commons/Buttons/ResponseButton";
 import Input from "@/components/commons/Input/Input";
 import NiceModal, { useModal } from "@ebay/nice-modal-react";
-import axios from "axios";
+import postDashboard from "@/api/postDashboard";
 
 const cx = classNames.bind(styles);
 
@@ -35,34 +35,20 @@ function DashboardCreationModal({ onCancel }: { onCancel: () => void }) {
     control,
   });
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    const value = data.dashBoardName;
-    creationModalHandler(value);
+  const colorList: { [key: string]: string } = {
+    green: "#7ac555",
+    purple: "#760dde",
+    orange: "#ffa500",
+    blue: "#76a5ea",
+    pink: "#e876ea",
   };
 
-  async function creationModalHandler(title: string) {
-    const accessToken =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Njg5LCJ0ZWFtSWQiOiIyLTkiLCJpYXQiOjE3MDY2ODU1ODcsImlzcyI6InNwLXRhc2tpZnkifQ.LpyKKnBYSkI29ifh2b3uZHhmjc07tGA7DOOnKKP4joI";
-    try {
-      await axios.post(
-        "https://sp-taskify-api.vercel.app/2-9/dashboards",
-        {
-          title,
-          color: "#E876EA",
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
+  const DashboardDotColor = colorList[color];
 
-      onCancel();
-    } catch (e) {
-      console.error(e);
-    }
-  }
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    const value = data.dashBoardName;
+    postDashboard(value, DashboardDotColor, onCancel);
+  };
 
   return (
     <>

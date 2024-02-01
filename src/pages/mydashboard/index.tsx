@@ -10,7 +10,7 @@ export async function getServerSideProps() {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: ["headers"],
+    queryKey: ["dashboardList"],
     queryFn: () => getDashBoards(),
   });
 
