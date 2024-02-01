@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 interface MixButtonProps {
   children?: React.ReactNode;
-  onClick?: any;
+  onClick?: () => void;
 }
 
 export const MixButton = ({ children, onClick }: MixButtonProps) => {
