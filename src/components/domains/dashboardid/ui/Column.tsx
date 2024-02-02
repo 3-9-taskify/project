@@ -18,6 +18,8 @@ interface ColumnProps {
 }
 
 export default function Column({ columnId, columnTitle }: ColumnProps) {
+  const bottomObserver = useRef<HTMLDivElement | null>(null);
+
   const {
     data: cardPagesInfo,
     fetchNextPage,
@@ -33,11 +35,8 @@ export default function Column({ columnId, columnTitle }: ColumnProps) {
   const cardPages = cardPagesInfo?.pages ?? [];
   const cardCount = cardPagesInfo?.pages[0].totalCount;
 
-  // 로딩 요소를 참조하기 위한 ref
-  const loadingRef = useRef(null);
-
   useEffect(() => {
-    if (isFetchingNextPage || !hasNextPage) return;
+    if (isFetchingNextPage || !hasNextPage || bottomObserver.current === null) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -45,14 +44,13 @@ export default function Column({ columnId, columnTitle }: ColumnProps) {
           fetchNextPage();
         }
       },
-      { root: document.querySelector(".column"), threshold: 1 }
+      { threshold: 0 }
     );
 
-    const currentLoadingRef = loadingRef.current;
-    observer.observe(currentLoadingRef);
+    const currentBottomObserver = bottomObserver.current;
+    observer.observe(bottomObserver.current);
 
-    // Clean up
-    return () => observer.unobserve(currentLoadingRef);
+    return () => observer.unobserve(currentBottomObserver);
   }, [isFetchingNextPage, hasNextPage, fetchNextPage]);
 
   return (
@@ -63,14 +61,14 @@ export default function Column({ columnId, columnTitle }: ColumnProps) {
       <MixButton />
       {cardCount !== 0 && (
         <div className={cx("column-pages")}>
-          {cardPages.map((cardPage) => (
-            <div className={cx("column-cards")}>
+          {cardPages.map((cardPage, i) => (
+            <div className={cx("column-cards")} key={i}>
               <CardList cardList={cardPage.cards} />
             </div>
           ))}
+          <div className={cx("column-pages-end")} ref={bottomObserver}></div>
         </div>
       )}
-      <div ref={loadingRef}>{isFetchingNextPage ? "Loading more..." : null}</div>
     </section>
   );
 }
