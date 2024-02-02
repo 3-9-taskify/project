@@ -5,6 +5,7 @@ import BaseContainer from "@/components/commons/BaseContainer/BaseContainer";
 import { useRouter } from "next/router";
 import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
 import getDashBoards from "@/api/getDashBoards";
+import getReceivedDashboardInvitations from "@/api/getReceivedDashboardInvitations";
 
 export async function getServerSideProps() {
   const queryClient = new QueryClient();
@@ -12,6 +13,11 @@ export async function getServerSideProps() {
   await queryClient.prefetchQuery({
     queryKey: ["dashboardList"],
     queryFn: () => getDashBoards(),
+  });
+
+  await queryClient.prefetchQuery({
+    queryKey: ["receivedDashboardInvitationsList"],
+    queryFn: () => getReceivedDashboardInvitations(),
   });
 
   return {
