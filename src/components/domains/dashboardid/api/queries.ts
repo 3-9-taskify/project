@@ -13,10 +13,18 @@ export const getColumnList = async (dashboardId: string | string[] | undefined) 
 };
 
 export const getCardList = async (cursorId: null | number, columnId: number) => {
-  const response = await axiosInstance.get(`cards`, {
+  const response = await axiosInstance.get("cards", {
     params: { size: 5, cursorId: cursorId, columnId: columnId },
     headers: { Authorization: `Bearer ${accessToken}` },
   });
 
   return response.data;
+};
+
+export const deleteColumn = async (columnId: number) => {
+  const response = await axiosInstance.delete(`columns/${columnId}`, {
+    headers: { Authorization: `Bearer ${accessToken}` },
+  });
+
+  return response.status;
 };

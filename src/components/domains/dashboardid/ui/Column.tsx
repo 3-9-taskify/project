@@ -56,7 +56,7 @@ export default function Column({ columnId, columnTitle }: ColumnProps) {
   return (
     <section className={cx("column")}>
       <div className={cx("column-header")}>
-        <ColumnHeader columnTitle={columnTitle} cardCount={cardCount} />
+        <ColumnHeader columnId={columnId} columnTitle={columnTitle} cardCount={cardCount} />
       </div>
       <MixButton />
       {cardCount !== 0 && (
