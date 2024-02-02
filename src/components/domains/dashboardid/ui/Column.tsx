@@ -45,7 +45,7 @@ export default function Column({ columnId, columnTitle }: ColumnProps) {
           fetchNextPage();
         }
       },
-      { root: document.querySelector(".column-pages"), threshold: 0 }
+      { root: document.querySelector(".column"), threshold: 1 }
     );
 
     const currentLoadingRef = loadingRef.current;
@@ -61,14 +61,16 @@ export default function Column({ columnId, columnTitle }: ColumnProps) {
         <ColumnHeader columnTitle={columnTitle} cardCount={cardCount} />
       </div>
       <MixButton />
-      <div className={cx("column-pages")}>
-        {cardPages.map((cardPage) => (
-          <div className={cx("column-cards")}>
-            <CardList cardList={cardPage.cards} />
-          </div>
-        ))}
-        <div ref={loadingRef}>{isFetchingNextPage ? "Loading more..." : null}</div>
-      </div>
+      {cardCount !== 0 && (
+        <div className={cx("column-pages")}>
+          {cardPages.map((cardPage) => (
+            <div className={cx("column-cards")}>
+              <CardList cardList={cardPage.cards} />
+            </div>
+          ))}
+        </div>
+      )}
+      <div ref={loadingRef}>{isFetchingNextPage ? "Loading more..." : null}</div>
     </section>
   );
 }

@@ -5,10 +5,15 @@ import { dehydrate, HydrationBoundary, QueryClient, DehydratedState } from "@tan
 import { getColumnList } from "@/components/domains/dashboardid/api/queries";
 import { getColumnListQueryKey } from "@/components/domains/dashboardid/api/queryKeys";
 
+import styles from "./dashboard.module.scss";
+import classNames from "classnames/bind";
+
 import DashboardLayout from "@/components/domains/dashboardid/DashboardLayout";
 import ColumnList from "@/components/domains/dashboardid/ColumnList";
 import AddColumn from "@/components/domains/dashboardid/AddColumn";
 import BaseContainer from "@/components/commons/BaseContainer/BaseContainer";
+
+const cx = classNames.bind(styles);
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const queryClient = new QueryClient();
@@ -32,9 +37,11 @@ export default function DashboardPage({ dehydratedState }: { dehydratedState: De
 
   return (
     <HydrationBoundary state={dehydratedState}>
-      <BaseContainer currentPath={currentPath}>
-        <DashboardLayout columnList={<ColumnList />} addColumn={<AddColumn />} />
-      </BaseContainer>
+      <div className={cx("container")}>
+        <BaseContainer currentPath={currentPath}>
+          <DashboardLayout columnList={<ColumnList />} addColumn={<AddColumn />} />
+        </BaseContainer>
+      </div>
     </HydrationBoundary>
   );
 }
