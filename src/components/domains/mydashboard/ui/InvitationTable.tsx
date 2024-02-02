@@ -71,7 +71,7 @@ export default function IvitationTable({ invitations }: IvitationTableProps) {
         {filteredData.map(({ id, dashboard: { title }, inviter: { nickname } }) => (
           <div className={cx("invitation-table-content")} key={id}>
             <div className={cx("invitation-table-content-word")}>
-              <Invitation title={title} inviter={nickname} />
+              <Invitation title={title} inviter={nickname} path={id} />
             </div>
             <hr className={cx("invitation-table-content-break")} />
           </div>

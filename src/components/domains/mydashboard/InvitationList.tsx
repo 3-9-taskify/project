@@ -3,7 +3,7 @@ import classNames from "classnames/bind";
 
 import EmptyInvitation from "./ui/EmptyInvitation";
 import IvitationTable from "./ui/InvitationTable";
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import getReceivedDashboardInvitations from "@/api/getReceivedDashboardInvitations";
 
 const cx = classNames.bind(styles);

@@ -9,6 +9,9 @@ export default async function getReceivedDashboardInvitations() {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
+      params: {
+        size: 10,
+      },
     });
 
     return res.data;

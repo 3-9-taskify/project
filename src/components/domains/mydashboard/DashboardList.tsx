@@ -25,8 +25,10 @@ export default function DashboardList() {
 
   const { data, isLoading } = useQuery({
     queryKey: ["dashboardList", currentPage],
-    queryFn: () => getDashBoards(currentPage),
+    queryFn: () => getDashBoards("pagination", 5, currentPage),
   });
+
+  console.log("this : ", data);
 
   const dashboardDatas = data?.dashboards;
   const totalPage = Math.ceil(data?.totalCount / 5);
