@@ -7,7 +7,7 @@ import { useState } from "react";
 import NiceModal, { useModal } from "@ebay/nice-modal-react";
 import ModalBackground from "../ModalBackground";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { getColumnList, deleteColumn } from "@/components/domains/dashboardid/api/queries";
+import { getColumnList, deleteColumn, putColumnName } from "@/components/domains/dashboardid/api/queries";
 import { getColumnListQueryKey } from "@/components/domains/dashboardid/api/queryKeys";
 import { useRouter } from "next/router";
 
@@ -49,6 +49,13 @@ function ColumnModal({ isEdit, onCancel, columnId }: Props) {
     },
   });
 
+  const putColumnNameMutation = useMutation({
+    mutationFn: (changedName) => putColumnName(columnId, changedName),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: getColumnListQueryKey(dashboardId) });
+    },
+  });
+
   function handleDeleteColumn() {
     deleteColumnMutation.mutate();
     onCancel();
@@ -59,6 +66,10 @@ function ColumnModal({ isEdit, onCancel, columnId }: Props) {
   }
 
   const handleOnSubmit: SubmitHandler<FieldValues> = (data) => {
+    if (isEdit) {
+      putColumnNameMutation.mutate({ title: data.columnName });
+      onCancel();
+    }
     console.log(data);
   };
 

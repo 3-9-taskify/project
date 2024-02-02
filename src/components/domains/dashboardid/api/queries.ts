@@ -28,3 +28,11 @@ export const deleteColumn = async (columnId: number) => {
 
   return response.status;
 };
+
+export const putColumnName = async (columnId: number, changedName) => {
+  const response = await axiosInstance.put(`columns/${columnId}`, changedName, {
+    headers: { Authorization: `Bearer ${accessToken}` },
+  });
+
+  return response.data;
+};
