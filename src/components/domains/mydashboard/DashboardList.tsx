@@ -28,14 +28,14 @@ export default function DashboardList() {
     queryFn: () => getDashBoards("pagination", 5, currentPage),
   });
 
-  console.log("this : ", data);
-
   const dashboardDatas = data?.dashboards;
   const totalPage = Math.ceil(data?.totalCount / 5);
 
   const showModal = () => {
     NiceModal.show(DashboardCreationModal);
   };
+
+  console.log(data);
 
   if (isLoading) {
     return (
