@@ -15,7 +15,7 @@ interface ColumnHeaderProps {
 }
 
 export default function ColumnHeader({ columnId, columnTitle, cardCount }: ColumnHeaderProps) {
-  const modal = useModal(ColumnModal, { isEdit: true, columnId });
+  const modal = useModal(ColumnModal);
   // console.log(columnId);
   return (
     <header className={cx("header")}>
@@ -24,7 +24,7 @@ export default function ColumnHeader({ columnId, columnTitle, cardCount }: Colum
         <h1 className={cx("header-title-text")}>{columnTitle}</h1>
         <p className={cx("header-title-count")}>{cardCount}</p>
       </div>
-      <button type="button" className={cx("header-img")} onClick={() => modal.show({ columnId })}>
+      <button type="button" className={cx("header-img")} onClick={() => modal.show({ isEdit: true, columnId })}>
         <Image fill src="/assets/icons/ic-gear.svg" alt="컬럼 수정 아이콘" />
       </button>
     </header>

@@ -7,14 +7,14 @@
   @include responsive("T") {
     width: 100%;
     height: auto;
-    padding: 2.2rem 2rem 0.8rem;
+    padding: 2.2rem 2rem 2rem;
     border-right: none;
     border-bottom: 0.1rem solid $gray-200;
     scrollbar-gutter: stable;
   }
 
   @include responsive("M") {
-    padding: 1.7rem 1.2rem 0;
+    padding: 1.7rem 1.2rem 1.2rem;
   }
 
   &-header {
@@ -47,7 +47,7 @@
     }
 
     &-end {
-      height: 0.12rem;
+      height: 0.1rem;
       flex-shrink: 0;
     }
   }

@@ -1,5 +1,6 @@
 import styles from "./AddColumn.module.scss";
 import classNames from "classnames/bind";
+
 import { useModal } from "@ebay/nice-modal-react";
 import ColumnModal from "@/components/commons/Modals/ColumnModals/ColumnModal";
 
@@ -12,7 +13,7 @@ export default function AddColumn() {
 
   return (
     <div className={cx("add-column")}>
-      <MixButton onClick={() => modal.show(ColumnModal)}>새로운 컬럼 추가하기</MixButton>
+      <MixButton onClick={() => modal.show({ isEdit: false })}>새로운 컬럼 추가하기</MixButton>
     </div>
   );
 }

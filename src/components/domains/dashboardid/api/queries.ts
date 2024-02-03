@@ -36,3 +36,11 @@ export const putColumnName = async (columnId: number, changedName) => {
 
   return response.data;
 };
+
+export const postColumn = async (newColumn) => {
+  const response = await axiosInstance.post("columns", newColumn, {
+    headers: { Authorization: `Bearer ${accessToken}` },
+  });
+
+  return response.data;
+};
