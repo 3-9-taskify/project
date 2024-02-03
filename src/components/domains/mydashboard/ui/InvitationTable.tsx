@@ -1,4 +1,4 @@
-import { FieldValues, SubmitHandler, useForm, useWatch } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 
 import styles from "./InvitationTable.module.scss";
 import classNames from "classnames/bind";
@@ -41,10 +41,6 @@ export default function IvitationTable({ invitations }: IvitationTableProps) {
     control,
     defaultValue: "",
   });
-
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log(data);
-  };
 
   const filteredData = invitations.filter((item) => {
     return item.dashboard.title.includes(searchValue) || item.inviter.nickname.includes(searchValue);

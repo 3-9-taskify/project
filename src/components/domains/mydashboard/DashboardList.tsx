@@ -35,8 +35,6 @@ export default function DashboardList() {
     NiceModal.show(DashboardCreationModal);
   };
 
-  console.log(data);
-
   if (isLoading) {
     return (
       <article>

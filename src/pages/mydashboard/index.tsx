@@ -12,7 +12,7 @@ export async function getServerSideProps() {
 
   await queryClient.prefetchQuery({
     queryKey: ["dashboardList"],
-    queryFn: () => getDashBoards(),
+    queryFn: () => getDashBoards("pagination", 5, 1),
   });
 
   await queryClient.prefetchQuery({
