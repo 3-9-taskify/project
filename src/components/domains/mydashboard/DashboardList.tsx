@@ -1,15 +1,15 @@
 import { useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
+import { useQuery } from "@tanstack/react-query";
+import NiceModal from "@ebay/nice-modal-react";
 import styles from "./DashboardList.module.scss";
 import skeletonStyles from "./ui/DashboardButtonSkUi.module.scss";
 import classNames from "classnames/bind";
 import { MixButton } from "@/components/commons/Buttons/MixButton";
 import DashboardButton from "./ui/DashboardButton";
 import PageChangeButton from "../../commons/Buttons/PageChangeButton";
-import NiceModal from "@ebay/nice-modal-react";
 import DashboardCreationModal from "@/components/commons/Modals/DashboardCreationModal/DashboardCreationModal";
-import { useQuery } from "@tanstack/react-query";
 import getDashBoards from "@/api/getDashBoards";
-import { useAuth } from "@/contexts/AuthContext";
 
 const cx = classNames.bind(styles);
 const skCx = classNames.bind(skeletonStyles);
