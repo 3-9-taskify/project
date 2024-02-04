@@ -18,7 +18,7 @@ export async function getServerSideProps() {
 
   await queryClient.prefetchQuery({
     queryKey: ["receivedDashboardInvitationsList"],
-    queryFn: () => getReceivedDashboardInvitations(null),
+    queryFn: () => getReceivedDashboardInvitations(null, null),
   });
 
   return {

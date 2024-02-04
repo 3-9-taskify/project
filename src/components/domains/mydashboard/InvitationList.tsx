@@ -49,7 +49,7 @@ export default function InvitedDashboardList() {
       <h1 className={cx("invitation-title")}>초대받은 대시보드</h1>
       {data && data.pages ? <IvitationTable pages={data.pages} /> : <EmptyInvitation />}
       <div className={cx("loding-container")}>{isFetchingNextPage ? <LodingSpinner /> : ""}</div>
-      <div ref={targetRef} />
+      <div ref={targetRef} style={{ width: "1px", height: "1px" }} />
     </article>
   );
 }

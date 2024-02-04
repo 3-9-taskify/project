@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import NiceModal from "@ebay/nice-modal-react";
 import styles from "./DashboardList.module.scss";
 import skeletonStyles from "./ui/DashboardButtonSkUi.module.scss";
@@ -24,6 +24,7 @@ interface DashboardData {
 export default function DashboardList() {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const { accessToken } = useAuth();
+  const queryClient = useQueryClient();
 
   const { data, isLoading } = useQuery({
     queryKey: ["dashboardList", currentPage],
@@ -36,6 +37,17 @@ export default function DashboardList() {
   const showModal = () => {
     NiceModal.show(DashboardCreationModal);
   };
+
+  useEffect(() => {
+    const nextPage = currentPage + 1;
+    if (currentPage < totalPage) {
+      console.log("ㅎㅇ");
+      queryClient.prefetchQuery({
+        queryKey: ["dashboardList", nextPage],
+        queryFn: () => getDashBoards("pagination", accessToken, 5, nextPage),
+      });
+    }
+  }, [currentPage]);
 
   if (isLoading) {
     return (

@@ -37,7 +37,7 @@ export interface IvitationTableProps {
 }
 
 export default function IvitationTable({ pages }: IvitationTableProps) {
-  const { control, handleSubmit } = useForm({ mode: "onChange" });
+  const { control } = useForm({ mode: "onChange" });
   const searchValue = useWatch({
     name: "search",
     control,
