@@ -1,9 +1,6 @@
 import { axiosInstance } from "./axiosInstance";
 
-export default async function getReceivedDashboardInvitations() {
-  const accessToken =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Njg5LCJ0ZWFtSWQiOiIyLTkiLCJpYXQiOjE3MDY2NzgwMzEsImlzcyI6InNwLXRhc2tpZnkifQ.xTJzppjh39utbp7V6-yYsFFXYzDmDT4jFUxabGtVZlY";
-
+export default async function getReceivedDashboardInvitations(accessToken: string | null) {
   try {
     const res = await axiosInstance.get(`invitations`, {
       headers: {

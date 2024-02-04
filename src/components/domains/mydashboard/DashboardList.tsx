@@ -9,6 +9,7 @@ import NiceModal from "@ebay/nice-modal-react";
 import DashboardCreationModal from "@/components/commons/Modals/DashboardCreationModal/DashboardCreationModal";
 import { useQuery } from "@tanstack/react-query";
 import getDashBoards from "@/api/getDashBoards";
+import { useAuth } from "@/contexts/AuthContext";
 
 const cx = classNames.bind(styles);
 const skCx = classNames.bind(skeletonStyles);
@@ -22,10 +23,11 @@ interface DashboardData {
 
 export default function DashboardList() {
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const { accessToken } = useAuth();
 
   const { data, isLoading } = useQuery({
     queryKey: ["dashboardList", currentPage],
-    queryFn: () => getDashBoards("pagination", 5, currentPage),
+    queryFn: () => getDashBoards("pagination", accessToken, 5, currentPage),
   });
 
   const dashboardDatas = data?.dashboards;
@@ -79,13 +81,13 @@ export default function DashboardList() {
           <PageChangeButton
             isForward={false}
             onClick={() => {
-              setCurrentPage(currentPage => currentPage - 1);
+              setCurrentPage((currentPage) => currentPage - 1);
             }}
             disabled={currentPage <= 1}
           />
           <PageChangeButton
             onClick={() => {
-              setCurrentPage(currentPage => currentPage + 1);
+              setCurrentPage((currentPage) => currentPage + 1);
             }}
             disabled={currentPage >= totalPage}
           />
