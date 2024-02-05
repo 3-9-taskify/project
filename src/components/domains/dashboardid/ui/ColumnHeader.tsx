@@ -16,7 +16,6 @@ interface ColumnHeaderProps {
 
 export default function ColumnHeader({ columnId, columnTitle, cardCount }: ColumnHeaderProps) {
   const modal = useModal(ColumnModal);
-
   return (
     <header className={cx("header")}>
       <div className={cx("header-title")}>
