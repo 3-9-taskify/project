@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { useRef } from "react";
-=======
-import { useEffect, useRef } from "react";
->>>>>>> e1fc8ef94dd555f8b20c55f7693d97db677f8397
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { getCardList } from "@/components/domains/dashboardid/api/queries";
 import { getCardListQueryKey } from "@/components/domains/dashboardid/api/queryKeys";
@@ -26,10 +22,7 @@ interface ColumnProps {
 }
 
 export default function Column({ columnId, columnTitle }: ColumnProps) {
-<<<<<<< HEAD
   const modal = useModal(TaskModal);
-=======
->>>>>>> e1fc8ef94dd555f8b20c55f7693d97db677f8397
   const bottomObserver = useRef<HTMLDivElement | null>(null);
 
   const {
