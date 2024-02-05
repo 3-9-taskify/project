@@ -40,14 +40,13 @@ export default function DashboardList() {
 
   useEffect(() => {
     const nextPage = currentPage + 1;
-    if (currentPage < totalPage) {
-      console.log("ㅎㅇ");
+    if (data && currentPage < totalPage) {
       queryClient.prefetchQuery({
         queryKey: ["dashboardList", nextPage],
         queryFn: () => getDashBoards("pagination", accessToken, 5, nextPage),
       });
     }
-  }, [currentPage]);
+  }, [currentPage, data]);
 
   if (isLoading) {
     return (
