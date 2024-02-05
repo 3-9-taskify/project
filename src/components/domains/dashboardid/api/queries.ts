@@ -45,3 +45,11 @@ export const postColumn = async (newColumn: NewColumn) => {
 
   return response.data;
 };
+
+export const getCardDetail = async (cardId: number) => {
+  const response = await axiosInstance.get(`cards/${cardId}`, {
+    headers: { Authorization: `Bearer ${accessToken}` },
+  });
+
+  return response.data;
+};

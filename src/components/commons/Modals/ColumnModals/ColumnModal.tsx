@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { getColumnList, deleteColumn, putColumnName, postColumn } from "@/components/domains/dashboardid/api/queries";
 import { getColumnListQueryKey } from "@/components/domains/dashboardid/api/queryKeys";
@@ -45,28 +46,24 @@ function ColumnModal({ isEdit, columnId, onCancel }: Props) {
   });
   const columnList = columnListData.data;
 
+  const mutationSuccess = () => {
+    queryClient.invalidateQueries({ queryKey: getColumnListQueryKey(dashboardId) });
+    onCancel();
+  };
+
   const postColumnMutation = useMutation({
     mutationFn: (newColumn: NewColumn) => postColumn(newColumn),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: getColumnListQueryKey(dashboardId) });
-      onCancel();
-    },
+    onSuccess: mutationSuccess,
   });
 
   const deleteColumnMutation = useMutation({
     mutationFn: () => deleteColumn(columnId),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: getColumnListQueryKey(dashboardId) });
-      onCancel();
-    },
+    onSuccess: mutationSuccess,
   });
 
   const putColumnNameMutation = useMutation({
     mutationFn: (changedName: ChangedName) => putColumnName(columnId, changedName),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: getColumnListQueryKey(dashboardId) });
-      onCancel();
-    },
+    onSuccess: mutationSuccess,
   });
 
   function handleDeleteColumn() {
