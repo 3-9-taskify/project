@@ -2,7 +2,10 @@ import { axiosSSRInstance } from "@/api/axiosSSRInstance";
 import { axiosCSRInstance } from "@/api/axiosCSRInstance";
 import { ChangedName, NewColumn } from "./type";
 
-export const getColumnList = async (dashboardId: string | string[] | undefined, accessToken?: string | undefined) => {
+export const getColumnList = async (
+  dashboardId: string | string[] | undefined,
+  accessToken?: string | undefined | null
+) => {
   const response = accessToken
     ? await axiosSSRInstance.get("columns", {
         params: { dashboardId: dashboardId },
