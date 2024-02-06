@@ -21,9 +21,8 @@ interface DashboardData {
   createdByMe: boolean;
 }
 
-export default function DashboardList() {
+export default function DashboardList({ accessToken }: { accessToken: string }) {
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const { accessToken } = useAuth();
   const queryClient = useQueryClient();
 
   const { data, isLoading } = useQuery({

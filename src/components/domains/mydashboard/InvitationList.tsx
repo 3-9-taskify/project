@@ -10,8 +10,7 @@ import LodingSpinner from "@/components/commons/LodingSpinner/LodingSpinner";
 
 const cx = classNames.bind(styles);
 
-export default function InvitedDashboardList() {
-  const { accessToken } = useAuth();
+export default function InvitedDashboardList({ accessToken }: { accessToken: string }) {
   const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery({
     queryKey: ["getReceivedDashboardInvitations"],
     queryFn: ({ pageParam }) => getReceivedDashboardInvitations(pageParam, accessToken),
@@ -42,7 +41,7 @@ export default function InvitedDashboardList() {
         observer.unobserve(targetRef.current);
       }
     };
-  }, [fetchNextPage]);
+  }, [fetchNextPage, accessToken]);
 
   return (
     <article className={cx("invitation")}>
