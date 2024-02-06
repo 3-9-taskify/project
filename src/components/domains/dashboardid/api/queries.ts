@@ -49,3 +49,9 @@ export const getCardDetail = async (cardId: number) => {
 
   return response.data;
 };
+
+export const deleteCard = async (cardId: number | undefined) => {
+  const response = await axiosCSRInstance.delete(`cards/${cardId}`);
+
+  return response.status;
+};
