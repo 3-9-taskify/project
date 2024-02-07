@@ -23,8 +23,9 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     queryFn: () => getDashBoards("pagination", accessToken, 18, 1),
   });
 
+  // TypeError: Cannot read properties of undefined (reading 'length')
   // await queryClient.prefetchQuery({
-  //   queryKey: ["receivedDashboardInvitationsList"],
+  //   queryKey: ["getReceivedDashboardInvitations"],
   //   queryFn: () => getReceivedDashboardInvitations(null, accessToken),
   // });
 
