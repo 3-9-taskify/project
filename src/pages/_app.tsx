@@ -5,6 +5,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { AuthProvider } from "@/contexts/AuthContext";
 import NiceModal from "@ebay/nice-modal-react";
 import "@/styles/base.scss";
+import NextNProgress from "nextjs-progressbar";
 
 const queryClient = new QueryClient();
 
@@ -21,8 +22,17 @@ function Providers({ children }: { children: ReactNode }) {
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Providers>
-      <Component {...pageProps} />
-    </Providers>
+    <>
+      <NextNProgress
+        color="#5535DB"
+        height={8}
+        options={{
+          easing: "ease",
+        }}
+      />
+      <Providers>
+        <Component {...pageProps} />
+      </Providers>
+    </>
   );
 }
