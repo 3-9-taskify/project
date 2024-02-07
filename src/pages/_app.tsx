@@ -24,10 +24,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <NextNProgress
-        color="#5535DB"
+        color="#5434D7"
         height={8}
         options={{
           easing: "ease",
+          showSpinner: false,
         }}
       />
       <Providers>
