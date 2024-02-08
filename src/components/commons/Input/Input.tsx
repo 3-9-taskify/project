@@ -24,7 +24,6 @@ export default function Input({
   labelName,
   isModal = false,
   tagItem,
-
   maxLength = 100,
   ...props
 }: InputProps) {
@@ -65,7 +64,7 @@ export default function Input({
           { checkbox: inputType === "checkbox" },
           { error: isError },
           { search: type === "search" },
-          { file: inputType === "file" }
+          { file: inputType === "file" },
         )}
         placeholder={placeholder}
         maxLength={maxLength}
@@ -73,6 +72,7 @@ export default function Input({
       />
 
       {inputType !== "checkbox" && <p className={cx("error-message")}>{fieldState.error?.message}</p>}
+
 
       {type === "password" && (
         <Image

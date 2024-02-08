@@ -4,7 +4,7 @@ import { axiosCSRInstance } from "./axiosCSRInstance";
 export default async function postDashboardInvitations(
   dashboardId: string | string[] | undefined,
   email: string,
-  accessToken: string | null
+  accessToken: string | null,
 ) {
   try {
     const res = await axiosCSRInstance.post(
