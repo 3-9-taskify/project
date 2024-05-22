@@ -16,6 +16,15 @@
 > Project-Period : 2024-01-25 ~ 2024-02-08  
 > Team : Codeit-Sprint-2-Part3-Team9(김우현,김하은,박지원,손오름,지현기)
 
+## 🔗 배포링크
+
+[🔗Link](https://project-cf3j.vercel.app/)
+
+## 🔑 Test 계정
+
+ID: zzz@naver.com
+PW: zzzzcccc
+
 ## 🔎 사용기술
 
 <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white"><img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white">  
@@ -47,7 +56,3 @@ git clone https://github.com/3-9-taskify/project.git .
 npm i
 npm start run
 ```
-
-## 🔗 배포링크
-
-[🔗Link](https://project-cf3j.vercel.app/)
