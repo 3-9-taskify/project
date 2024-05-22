@@ -17,12 +17,11 @@
 > Team : Codeit-Sprint-2-Part3-Team9(김우현,김하은,박지원,손오름,지현기)
 
 ## 🔗 배포링크
-
-[🔗Link](https://project-cf3j.vercel.app/)
+[Taskify](https://project-cf3j.vercel.app/)
 
 ## 🔑 Test 계정
 
-ID: zzz@naver.com
+ID: zzz@naver.com <br>
 PW: zzzzcccc
 
 ## 🔎 사용기술
