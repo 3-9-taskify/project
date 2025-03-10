@@ -16,9 +16,6 @@
 > Project-Period : 2024-01-25 ~ 2024-02-08  
 > Team : Codeit-Sprint-2-Part3-Team9(김우현,김하은,박지원,손오름,지현기)
 
-## 🔗 배포링크
-[Taskify](https://project-cf3j.vercel.app/)
-
 ## 🔑 Test 계정
 
 ID: zzz@naver.com <br>
